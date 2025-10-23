@@ -182,9 +182,7 @@ Your continued use of the App after changes constitutes acceptance of the update
 
 If you have questions or concerns about this Privacy Policy, please contact us:
 
-**Email:** [Your support email]
-**Website:** [Your website]
-**Address:** [Your address if applicable]
+**Email:** markono.code+support@gmail.com
 
 ## Legal Compliance
 

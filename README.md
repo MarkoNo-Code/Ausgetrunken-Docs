@@ -14,8 +14,7 @@ Ausgetrunken is a sophisticated Android application connecting wine enthusiasts 
 ## Contact
 
 For support or inquiries, please contact:
-- Email: [Your email here]
-- Website: [Your website here]
+- Email: markono.code+support@gmail.com
 
 ---
 

@@ -206,13 +206,13 @@ Your continued use after changes constitutes acceptance of the new Terms.
 
 ## Geographic Restrictions
 
-The App is intended for users in [your target regions/countries]. We make no claims that the App is accessible or appropriate outside these areas. If you access the App from other locations, you do so at your own risk and are responsible for compliance with local laws.
+The App is primarily intended for users in Germany. We make no claims that the App is accessible or appropriate outside Germany. If you access the App from other locations, you do so at your own risk and are responsible for compliance with local laws, particularly regarding alcohol regulations.
 
 ## Dispute Resolution
 
 ### Governing Law
 
-These Terms are governed by the laws of [Your Country/State], without regard to conflict of law principles.
+These Terms are governed by the laws of Switzerland, without regard to conflict of law principles.
 
 ### Arbitration
 
@@ -237,9 +237,7 @@ These Terms, along with our Privacy Policy, constitute the entire agreement betw
 
 For questions about these Terms, please contact:
 
-**Email:** [Your support email]
-**Website:** [Your website]
-**Address:** [Your address if applicable]
+**Email:** markono.code+support@gmail.com
 
 ## Acknowledgment
 
