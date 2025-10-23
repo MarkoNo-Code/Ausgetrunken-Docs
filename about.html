@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Ausgetrunken - Wine Marketplace</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 60px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .back-link {
+            display: inline-block;
+            color: #722F37;
+            text-decoration: none;
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        h1 {
+            color: #722F37;
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
+
+        .tagline {
+            color: #666;
+            font-size: 18px;
+            margin-bottom: 40px;
+            font-style: italic;
+        }
+
+        h2 {
+            color: #2F2F2F;
+            font-size: 28px;
+            margin-top: 50px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        h3 {
+            color: #555;
+            font-size: 22px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            color: #444;
+        }
+
+        ul {
+            margin-left: 30px;
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin-bottom: 12px;
+            color: #444;
+        }
+
+        strong {
+            color: #2F2F2F;
+        }
+
+        a {
+            color: #722F37;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 30px 0;
+        }
+
+        .feature-card {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 4px solid #722F37;
+        }
+
+        .feature-card h3 {
+            margin-top: 0;
+            color: #722F37;
+        }
+
+        .tech-badge {
+            display: inline-block;
+            background: #722F37;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 4px;
+            font-size: 14px;
+            margin: 5px 5px 5px 0;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #722F37 0%, #8B5A3C 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .cta-section h2 {
+            color: white;
+            border: none;
+            margin-top: 0;
+        }
+
+        .footer {
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 2px solid #f0f0f0;
+            text-align: center;
+            color: #666;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px 20px;
+            }
+
+            h1 {
+                font-size: 32px;
+            }
+
+            h2 {
+                font-size: 24px;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">← Back to Documentation</a>
+
+        <h1>🍷 Ausgetrunken</h1>
+        <p class="tagline">Connecting wine enthusiasts with local wineries in Germany</p>
+
+        <h2>Overview</h2>
+        <p>Ausgetrunken bridges the gap between winery owners and wine lovers. Our platform allows winery owners to showcase their products and manage inventory, while customers can discover local wineries, browse wine catalogs, and receive notifications about their favorite wines.</p>
+
+        <h2>Features</h2>
+
+        <div class="feature-grid">
+            <div class="feature-card">
+                <h3>🏭 For Winery Owners</h3>
+                <ul>
+                    <li><strong>Profile Management</strong> - Create beautiful winery profiles with photo galleries</li>
+                    <li><strong>Wine Catalog</strong> - Manage your complete wine collection</li>
+                    <li><strong>Inventory Tracking</strong> - Keep track of stock levels</li>
+                    <li><strong>Smart Notifications</strong> - Automatic alerts at 20% stock threshold</li>
+                    <li><strong>Location Services</strong> - Help customers find you</li>
+                </ul>
+            </div>
+
+            <div class="feature-card">
+                <h3>🍷 For Wine Enthusiasts</h3>
+                <ul>
+                    <li><strong>Winery Discovery</strong> - Find local wineries near you</li>
+                    <li><strong>Wine Browsing</strong> - Explore detailed wine catalogs</li>
+                    <li><strong>Subscriptions</strong> - Subscribe to your favorite wines</li>
+                    <li><strong>Interactive Map</strong> - Visual winery discovery</li>
+                    <li><strong>Notifications</strong> - Get alerted about low stock wines</li>
+                </ul>
+            </div>
+        </div>
+
+        <h2>Design Philosophy</h2>
+        <p>Ausgetrunken features a sophisticated, premium design inspired by the wine industry:</p>
+        <ul>
+            <li>Elegant slate black and dark brownish-tan base colors</li>
+            <li>Wine red accents (#722F37) and gold highlights (#D4AF37)</li>
+            <li>Material Design 3 components for modern Android</li>
+            <li>Responsive and intuitive user interface</li>
+            <li>Optimized for Android 12 and above</li>
+        </ul>
+
+        <h2>Technology</h2>
+        <p>Built with cutting-edge Android technologies:</p>
+        <div>
+            <span class="tech-badge">Jetpack Compose</span>
+            <span class="tech-badge">Supabase</span>
+            <span class="tech-badge">Material Design 3</span>
+            <span class="tech-badge">Kotlin</span>
+            <span class="tech-badge">MVVM Architecture</span>
+            <span class="tech-badge">Room Database</span>
+        </div>
+
+        <h2>Coming Soon</h2>
+        <p>Exciting features currently in development:</p>
+        <ul>
+            <li><strong>Automated Stock Management</strong> - Advanced inventory tracking and analytics</li>
+            <li><strong>Location-Based Discovery</strong> - Enhanced proximity search and filtering</li>
+            <li><strong>QR Code Scanning</strong> - Instant wine information with a simple scan</li>
+        </ul>
+
+        <div class="cta-section">
+            <h2>Available Now on Google Play</h2>
+            <p style="font-size: 18px; margin: 20px 0;">Download Ausgetrunken today and start discovering amazing local wineries in Germany!</p>
+            <p style="font-size: 14px; opacity: 0.9;">Currently available in Germany</p>
+        </div>
+
+        <h2>Contact & Support</h2>
+        <p>Need help or have questions?</p>
+        <ul>
+            <li><strong>Email:</strong> <a href="mailto:markono.code+support@gmail.com">markono.code+support@gmail.com</a></li>
+            <li><strong>Privacy Policy:</strong> <a href="privacy-policy.html">View Privacy Policy</a></li>
+            <li><strong>Terms of Service:</strong> <a href="terms-of-service.html">View Terms of Service</a></li>
+        </ul>
+
+        <div class="footer">
+            <p><strong>Ausgetrunken</strong> - Connecting wine lovers with local wineries</p>
+            <p style="margin-top: 10px;">© 2025 Marko Nonninger. All rights reserved.</p>
+            <p style="margin-top: 10px;"><a href="index.html">Back to Documentation</a></p>
+        </div>
+    </div>
+</body>
+</html>
