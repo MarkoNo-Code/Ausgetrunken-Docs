@@ -58,8 +58,17 @@ Der Worker bleibt bestehen, weil ausgelieferte App-Versionen (mindestens bis
 0.4.4) auf `https://ausgetrunken-legal.markono-code.workers.dev/<seite>` verlinken.
 Er leitet jeden Pfad 1:1 per 301 hierher um. Quelltext:
 `_cloudflare/ausgetrunken-legal-worker.js` — Jekyll überspringt Ordner mit `_`,
-er wird also nicht mit ausgeliefert. Cloudflare hat keine Git-Anbindung; der Code
-wird im Dashboard eingefügt.
+er wird also nicht mit ausgeliefert. Cloudflare hat keine Git-Anbindung; deployt
+wird von Hand:
+
+```
+npx wrangler deploy _cloudflare/ausgetrunken-legal-worker.js \
+  --name ausgetrunken-legal --compatibility-date 2026-09-01
+```
+
+Wrangler legt dabei im aktuellen Verzeichnis einen `.wrangler/`-Cache an — nicht
+committen. Die frühere Fassung mit den statischen Seiten ist Worker-Version
+`8efcd9c1-164c-46ea-8b39-5cf1b5794996` (`wrangler rollback`).
 
 Beim nächsten App-Release die Links in der App direkt auf diese Seite umstellen
 (Android `SettingsScreen.kt`, iOS `LegalLinks.swift` und `SettingsView.swift`).

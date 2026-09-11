@@ -4,27 +4,17 @@ Stand: 11.09.2026, nach der Konsolidierung. Dieses Repo ist jetzt die **einzige*
 Quelle der Ausgetrunken-Rechtsseiten (siehe README → Hosting). Die Kopie in
 `Ausgetrunken/shared-docs/web/` ist gelöscht.
 
-Der Stand auf der Platte ist **nicht committet und nicht deployt**. Live ist
-weiterhin der Worker `ausgetrunken-legal` mit der alten Fassung; GitHub Pages
-liefert für dieses Repo derzeit **404**.
+Live seit 11.09.2026: GitHub Pages liefert diesen Stand aus, der Worker
+`ausgetrunken-legal` leitet alle alten App-Links per 301 hierher um (Version
+`8fae01fa`, alle sieben Pfade geprüft).
 
 ---
 
-## 1. Umstellung — in dieser Reihenfolge
+## 1. Store-Konsolen
 
-- [ ] **Im Browser ansehen.** Sechs Seiten × hell/dunkel × schmal. Besonders: das
-      zurückgenommene Hero-Band (`#f4ece9` / `#1a1416`), die einzelne Goldlinie
-      und der neue Sprachumschalter EN/DE im Header der Privacy-Seiten.
-- [ ] **Committen und pushen.**
-- [ ] **GitHub Pages wieder in Gang bringen.** Das Repo meldet `has_pages: true`,
-      der letzte Build (Okt. 2025) war erfolgreich, trotzdem kommt 404. Repo →
-      Settings → Pages: Source *Deploy from a branch*, Branch `master`, Ordner
-      `/ (root)`. Danach muss
-      https://markono-code.github.io/Ausgetrunken-Docs/delete-account/ laden.
-- [ ] **Worker auf Redirect umstellen** — erst wenn Pages live ist. Cloudflare →
-      Workers & Pages → `ausgetrunken-legal` → Edit code → Inhalt von
-      `_cloudflare/ausgetrunken-legal-worker.js` einfügen → Deploy. Prüfen:
-      `…workers.dev/privacy-policy.html` landet auf der GitHub-Seite.
+Die alten Worker-URLs funktionieren dank Umleitung weiter. Trotzdem die direkten
+URLs eintragen, dann hängt der Store-Eintrag nicht mehr am Worker:
+
 - [ ] **Store-Konsolen auf die direkten URLs setzen:**
       - Play Console → App-Inhalte → Datenschutzerklärung:
         `https://markono-code.github.io/Ausgetrunken-Docs/privacy-policy.html`
