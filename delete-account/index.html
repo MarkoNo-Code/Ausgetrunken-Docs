@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="auto">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Delete your account — Ausgetrunken</title>
+<meta name="description" content="How to delete your Ausgetrunken account and all associated data — in the app on Android and iOS, or by email. Reversible for 30 days. So löschen Sie Ihr Ausgetrunken-Konto.">
+<meta name="author" content="Marko Nonninger">
+<link rel="canonical" href="https://markono-code.github.io/Ausgetrunken-Docs/delete-account/">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://markono-code.github.io/Ausgetrunken-Docs/delete-account/">
+<meta property="og:title" content="Delete your account — Ausgetrunken">
+<meta property="og:description" content="How to delete your Ausgetrunken account and all associated data.">
+
+<meta name="theme-color" content="#fdfbf7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#121111" media="(prefers-color-scheme: dark)">
+
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&display=swap">
+<link rel="stylesheet" href="../assets/css/docs.css">
+
+<script>
+  (function () {
+    try {
+      var t = localStorage.getItem("markono.theme");
+      if (t === "light" || t === "dark" || t === "auto") {
+        document.documentElement.setAttribute("data-theme", t);
+      }
+    } catch (e) { /* private mode — the "auto" default in the markup stands */ }
+  })();
+</script>
+</head>
+
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- ============================================================ HEADER ==== -->
+<header class="site-header">
+  <div class="shell site-header__inner">
+
+    <a class="brand" href="../" aria-label="Ausgetrunken documentation — home">
+      <img class="brand__logo" src="../assets/img/ausgetrunken-icon.svg" alt="" width="32" height="32">
+      <span>
+        <span class="brand__text">Ausgetrunken</span>
+        <span class="brand__sub">Legal &amp; Privacy</span>
+      </span>
+    </a>
+
+    <nav class="site-nav" aria-label="Documents">
+      <a class="site-nav__link" href="../about.html">About</a>
+      <a class="site-nav__link" href="../privacy-policy.html">Privacy</a>
+      <a class="site-nav__link" href="../terms-of-service.html">Terms</a>
+      <a class="site-nav__link" href="./" aria-current="page">Delete account</a>
+    </nav>
+
+    <div class="header-tools">
+      <button type="button" class="icon-btn" id="themeToggle"
+              aria-label="Colour theme: automatic" title="Colour theme: automatic">
+        <svg class="icon icon--sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <circle cx="12" cy="12" r="4.2"/>
+          <path d="M12 2.2v2.4M12 19.4v2.4M2.2 12h2.4M19.4 12h2.4M5.1 5.1l1.7 1.7M17.2 17.2l1.7 1.7M18.9 5.1l-1.7 1.7M6.8 17.2l-1.7 1.7"/>
+        </svg>
+        <svg class="icon icon--moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M20.5 14.8A8.6 8.6 0 0 1 9.2 3.5a8.6 8.6 0 1 0 11.3 11.3z"/>
+        </svg>
+      </button>
+    </div>
+
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ========================================================== HERO ==== -->
+  <section class="doc-hero doc-hero--doc">
+    <div class="shell doc-hero__inner">
+      <a class="backlink" href="../">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M19 12H6M11.5 5.5 5 12l6.5 6.5"/>
+        </svg>
+        Back to documentation
+      </a>
+
+      <p class="kicker kicker--onDark">Account</p>
+      <h1>Delete your account</h1>
+      <p class="doc-hero__lead">
+        Two ways to remove your account and everything attached to it — in the app
+        on Android or iOS, or by email if you no longer have access.
+        <span lang="de">Deutsche Fassung weiter unten.</span>
+      </p>
+
+      <div class="doc-meta">
+        <span class="doc-meta__item">
+          <span class="doc-meta__key">Languages</span>
+          <span class="doc-meta__val">English &amp; Deutsch</span>
+        </span>
+        <span class="doc-meta__item">
+          <span class="doc-meta__key">Grace period</span>
+          <span class="doc-meta__val">30 days</span>
+        </span>
+        <span class="doc-meta__item">
+          <span class="doc-meta__key">Contact</span>
+          <span class="doc-meta__val"><a href="mailto:ausgetrunken@markono.dev">ausgetrunken@markono.dev</a></span>
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================== BODY ==== -->
+  <div class="shell doc-layout">
+
+    <aside class="toc" aria-labelledby="toc-title">
+      <p class="toc__title" id="toc-title">Contents · Inhalt</p>
+      <nav class="toc__list">
+        <a class="toc__link" href="#english"><span class="toc__num">EN</span>How to delete your account</a>
+        <a class="toc__link" href="#en-deleted"><span class="toc__num">·</span>What gets deleted</a>
+        <a class="toc__link" href="#deutsch"><span class="toc__num">DE</span>So löschst du dein Konto</a>
+        <a class="toc__link" href="#de-geloescht"><span class="toc__num">·</span>Was wird gelöscht?</a>
+      </nav>
+    </aside>
+
+    <article class="legal">
+
+      <!-- ============================ ENGLISH ============================ -->
+      <section class="lang-block" lang="en" aria-labelledby="english">
+        <span class="lang-block__tag">English</span>
+
+        <h2 id="english">How to delete your account</h2>
+
+        <h3>In the app (recommended)</h3>
+        <p>Available on both Android and iOS:</p>
+        <ul>
+          <li>Open <strong>Ausgetrunken</strong> and sign in.</li>
+          <li>Open your <strong>profile</strong> (winery owners on iOS: tap your profile picture).</li>
+          <li>Choose <strong>Delete account</strong> and confirm.</li>
+          <li>You are signed out immediately and your account is scheduled for deletion.</li>
+        </ul>
+
+        <div class="callout">
+          <span class="callout__label">You can change your mind</span>
+          <p>
+            For <strong>30 days</strong> the deletion can be cancelled by simply
+            signing in again. Nothing is removed during that window. After 30 days
+            a scheduled job deletes everything permanently.
+          </p>
+        </div>
+
+        <h3>Without the app (by email)</h3>
+        <p>
+          If you can no longer access the app, email us from your account's email
+          address so we can identify it without further questions:
+        </p>
+        <p class="btn-row">
+          <a class="btn btn--primary"
+             href="mailto:ausgetrunken@markono.dev?subject=Ausgetrunken%20%E2%80%93%20Delete%20account&body=Please%20delete%20my%20Ausgetrunken%20account%20and%20all%20associated%20data.%0A%0AAccount%20email%3A%20">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M3.5 6.5h17v11h-17zM3.5 7l8.5 6 8.5-6"/>
+            </svg>
+            Request deletion by email
+          </a>
+        </p>
+
+        <h2 id="en-deleted">What gets deleted</h2>
+        <ul>
+          <li>Your account and login credentials</li>
+          <li>Your profile, and for winery owners your winery and its entire wine catalog</li>
+          <li>All uploaded photos — profile, winery, wine and presentation images</li>
+          <li>Ratings, reviews, favourites and flavour tags you created</li>
+          <li>Your winery and wine subscriptions, and your stored notifications</li>
+          <li>Your subscription records and your push notification token</li>
+          <li>The &ldquo;Sign in with Apple&rdquo; grant, revoked with Apple on your behalf</li>
+        </ul>
+
+        <div class="panel panel--warn">
+          <span class="panel__label">Irreversible after 30 days</span>
+          <p>
+            Once the grace period has elapsed and the deletion has run, your data
+            cannot be recovered. Deleting your account does not by itself cancel a
+            paid subscription — manage that in your Google Play or App Store
+            account.
+          </p>
+        </div>
+      </section>
+
+      <!-- ============================ DEUTSCH ============================ -->
+      <section class="lang-block" lang="de" aria-labelledby="deutsch">
+        <span class="lang-block__tag">Deutsch</span>
+
+        <h2 id="deutsch">So löschst du dein Konto</h2>
+
+        <h3>Direkt in der App (empfohlen)</h3>
+        <p>Verfügbar unter Android und iOS:</p>
+        <ul>
+          <li>Öffne <strong>Ausgetrunken</strong> und melde dich an.</li>
+          <li>Öffne dein <strong>Profil</strong> (Winzer unter iOS: auf das Profilbild tippen).</li>
+          <li>Wähle <strong>Konto löschen</strong> und bestätige.</li>
+          <li>Du wirst sofort abgemeldet und dein Konto wird zur Löschung vorgemerkt.</li>
+        </ul>
+
+        <div class="callout">
+          <span class="callout__label">Du kannst es dir überlegen</span>
+          <p>
+            <strong>30 Tage lang</strong> lässt sich die Löschung abbrechen, indem
+            du dich einfach wieder anmeldest. In dieser Zeit wird nichts entfernt.
+            Danach löscht ein automatischer Vorgang alles endgültig.
+          </p>
+        </div>
+
+        <h3>Ohne App (per E-Mail)</h3>
+        <p>
+          Falls du keinen Zugriff mehr auf die App hast, schreib uns von der
+          E-Mail-Adresse deines Kontos, damit es eindeutig zugeordnet werden kann:
+        </p>
+        <p class="btn-row">
+          <a class="btn btn--primary"
+             href="mailto:ausgetrunken@markono.dev?subject=Ausgetrunken%20%E2%80%93%20Konto%20l%C3%B6schen&body=Bitte%20l%C3%B6schen%20Sie%20mein%20Ausgetrunken-Konto%20und%20alle%20zugeh%C3%B6rigen%20Daten.%0A%0AKonto-E-Mail%3A%20">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M3.5 6.5h17v11h-17zM3.5 7l8.5 6 8.5-6"/>
+            </svg>
+            Löschung per E-Mail anfordern
+          </a>
+        </p>
+
+        <h2 id="de-geloescht">Was wird gelöscht?</h2>
+        <ul>
+          <li>Dein Konto und deine Anmeldedaten</li>
+          <li>Dein Profil und, als Winzer, dein Weingut samt komplettem Weinkatalog</li>
+          <li>Alle hochgeladenen Fotos — Profil-, Weingut-, Wein- und Präsentationsbilder</li>
+          <li>Von dir erstellte Bewertungen, Rezensionen, Favoriten und Geschmacks-Tags</li>
+          <li>Deine Weingut- und Wein-Abos sowie deine gespeicherten Benachrichtigungen</li>
+          <li>Deine Abo-Daten und dein Push-Token</li>
+          <li>Die „Mit Apple anmelden“-Verknüpfung, die in deinem Namen bei Apple widerrufen wird</li>
+        </ul>
+
+        <div class="panel panel--warn">
+          <span class="panel__label">Nach 30 Tagen unwiderruflich</span>
+          <p>
+            Ist die Frist abgelaufen und die Löschung durchgeführt, können deine
+            Daten nicht wiederhergestellt werden. Das Löschen des Kontos beendet
+            für sich genommen kein kostenpflichtiges Abo — das verwaltest du in
+            deinem Google-Play- oder App-Store-Konto.
+          </p>
+        </div>
+      </section>
+
+      <p class="legal__foot">
+        Ausgetrunken · Kontakt / Contact:
+        <a href="mailto:ausgetrunken@markono.dev">ausgetrunken@markono.dev</a><br>
+        See also the <a href="../privacy-policy.html#deletion">Privacy Policy, section 6</a>
+        · <span lang="de">siehe auch die <a href="../datenschutzerklaerung.html#loeschung" hreflang="de">Datenschutzerklärung, Abschnitt 6</a></span>.<br>
+        &copy; <span id="year">2026</span> Marko Nonninger
+      </p>
+
+    </article>
+  </div>
+
+</main>
+
+<!-- ============================================================ FOOTER ==== -->
+<footer class="site-footer">
+  <div class="shell site-footer__inner">
+    <div class="site-footer__brand">
+      <span class="brand__text">Ausgetrunken</span>
+      <span class="site-footer__tagline">Connecting wine lovers with local wineries</span>
+    </div>
+
+    <nav class="site-footer__links" aria-label="Documents">
+      <a href="../">Overview</a>
+      <a href="../about.html">About</a>
+      <a href="../privacy-policy.html">Privacy Policy</a>
+      <a href="../terms-of-service.html">Terms of Service</a>
+      <a href="https://markono.dev/" rel="noopener">markono.dev</a>
+    </nav>
+
+    <div class="site-footer__meta">
+      <span>&copy; 2026 Marko Nonninger. All rights reserved.</span>
+      <span class="site-footer__built">Primarily available in Germany · Governed by Swiss law</span>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/js/docs.js"></script>
+</body>
+</html>

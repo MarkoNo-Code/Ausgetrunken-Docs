@@ -1,3 +1,6 @@
 title: Ausgetrunken Legal Documentation
 description: Privacy Policy and Terms of Service for Ausgetrunken wine marketplace app
-theme: jekyll-theme-cayman
+# Repo notes stay on GitHub; the site serves only the HTML pages.
+exclude:
+  - README.md
+  - TODO.md

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Ausgetrunken brand icon — the single source for both platforms.
+
+  Full-bleed, as iOS and the Play listing want it. Android's launcher does NOT use this file:
+  it needs a 108dp adaptive icon with a safe zone, which lives in
+  Android/app/src/main/res/drawable/ic_launcher_foreground.xml with the same geometry.
+
+  Export at 1024x1024 for iOS and 512x512 (no alpha) for the Play Store listing.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <rect width="512" height="512" rx="112" ry="112" fill="#121111"/>
+  <g transform="translate(94 94) scale(13.5)">
+    <path d="M6,3V9C6,11.97 8.56,14.52 11.4,15V19.2L8,19.8V21H16V19.8L12.6,19.2V15C15.44,14.52 18,11.97 18,9V3H6ZM16.8,7.8H7.2V4.2H16.8V7.8Z" fill="#EDE8E9"/>
+    <path d="M7.2,7.8C7.2,7.8 7.2,11.4 9,12.6C10.8,13.8 13.2,13.8 15,12.6C16.8,11.4 16.8,7.8 16.8,7.8H7.2Z" fill="#722F37"/>
+  </g>
+</svg>

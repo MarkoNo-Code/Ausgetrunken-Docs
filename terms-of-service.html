@@ -1,279 +1,366 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="auto">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terms of Service - Ausgetrunken</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.8;
-            color: #333;
-            background: #f5f5f5;
-            padding: 20px;
-        }
+<title>Terms of Service — Ausgetrunken</title>
+<meta name="description" content="Terms of service for Ausgetrunken: account types, age requirements, alcohol-related restrictions, winery owner responsibilities and dispute resolution.">
+<meta name="author" content="Marko Nonninger">
+<link rel="canonical" href="https://markono-code.github.io/Ausgetrunken-Docs/terms-of-service.html">
 
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            background: white;
-            padding: 60px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://markono-code.github.io/Ausgetrunken-Docs/terms-of-service.html">
+<meta property="og:title" content="Terms of Service — Ausgetrunken">
+<meta property="og:description" content="The terms and conditions for using Ausgetrunken.">
 
-        .back-link {
-            display: inline-block;
-            color: #722F37;
-            text-decoration: none;
-            margin-bottom: 30px;
-            font-weight: 500;
-        }
+<meta name="theme-color" content="#fdfbf7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#121111" media="(prefers-color-scheme: dark)">
 
-        .back-link:hover {
-            text-decoration: underline;
-        }
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&display=swap">
+<link rel="stylesheet" href="assets/css/docs.css">
 
-        h1 {
-            color: #722F37;
-            font-size: 36px;
-            margin-bottom: 10px;
-        }
-
-        .last-updated {
-            color: #666;
-            font-size: 14px;
-            margin-bottom: 40px;
-            font-weight: 600;
-        }
-
-        h2 {
-            color: #2F2F2F;
-            font-size: 28px;
-            margin-top: 50px;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #f0f0f0;
-        }
-
-        h3 {
-            color: #555;
-            font-size: 22px;
-            margin-top: 30px;
-            margin-bottom: 15px;
-        }
-
-        p {
-            margin-bottom: 15px;
-            color: #444;
-        }
-
-        ul, ol {
-            margin-left: 30px;
-            margin-bottom: 20px;
-        }
-
-        li {
-            margin-bottom: 10px;
-            color: #444;
-        }
-
-        strong {
-            color: #2F2F2F;
-        }
-
-        a {
-            color: #722F37;
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        .footer {
-            margin-top: 60px;
-            padding-top: 30px;
-            border-top: 2px solid #f0f0f0;
-            text-align: center;
-            color: #666;
-            font-size: 14px;
-        }
-
-        .acknowledgment {
-            background: #fff9e6;
-            border-left: 4px solid #D4AF37;
-            padding: 20px;
-            margin: 30px 0;
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                padding: 30px 20px;
-            }
-
-            h1 {
-                font-size: 28px;
-            }
-
-            h2 {
-                font-size: 22px;
-            }
-
-            h3 {
-                font-size: 18px;
-            }
-        }
-    </style>
+<script>
+  (function () {
+    try {
+      var t = localStorage.getItem("markono.theme");
+      if (t === "light" || t === "dark" || t === "auto") {
+        document.documentElement.setAttribute("data-theme", t);
+      }
+    } catch (e) { /* private mode — the "auto" default in the markup stands */ }
+  })();
+</script>
 </head>
+
 <body>
-    <div class="container">
-        <a href="index.html" class="back-link">← Back to Documentation</a>
 
-        <h1>Terms of Service for Ausgetrunken</h1>
-        <p class="last-updated"><strong>Last Updated: January 23, 2025</strong></p>
+<a class="skip-link" href="#main">Skip to content</a>
 
-        <h2>Agreement to Terms</h2>
-        <p>By accessing or using the Ausgetrunken mobile application ("App"), you agree to be bound by these Terms of Service ("Terms"). If you do not agree to these Terms, please do not use the App.</p>
+<!-- ============================================================ HEADER ==== -->
+<header class="site-header">
+  <div class="shell site-header__inner">
 
-        <h2>Description of Service</h2>
-        <p>Ausgetrunken is a mobile platform that:</p>
-        <ul>
-            <li>Connects winery owners with wine enthusiasts</li>
-            <li>Allows winery owners to showcase and manage their wine inventory</li>
-            <li>Enables customers to discover wineries, browse wine catalogs, and receive inventory notifications</li>
-            <li>Provides location-based winery discovery features</li>
-        </ul>
+    <a class="brand" href="./" aria-label="Ausgetrunken documentation — home">
+      <img class="brand__logo" src="assets/img/ausgetrunken-icon.svg" alt="" width="32" height="32">
+      <span>
+        <span class="brand__text">Ausgetrunken</span>
+        <span class="brand__sub">Legal &amp; Privacy</span>
+      </span>
+    </a>
 
-        <h2>User Accounts</h2>
+    <nav class="site-nav" aria-label="Documents">
+      <a class="site-nav__link" href="about.html">About</a>
+      <a class="site-nav__link" href="privacy-policy.html">Privacy</a>
+      <a class="site-nav__link" href="terms-of-service.html" aria-current="page">Terms</a>
+      <a class="site-nav__link" href="delete-account/">Delete account</a>
+    </nav>
 
-        <h3>Registration</h3>
-        <p>To use certain features of the App, you must register for an account. You agree to:</p>
-        <ul>
-            <li>Provide accurate, current, and complete information</li>
-            <li>Maintain and update your information to keep it accurate</li>
-            <li>Maintain the security of your password and account</li>
-            <li>Accept responsibility for all activities under your account</li>
-            <li>Notify us immediately of any unauthorized use</li>
-        </ul>
-
-        <h3>Account Types</h3>
-        <p><strong>Winery Owner Accounts:</strong></p>
-        <ul>
-            <li>For commercial winery operations only</li>
-            <li>You must have legal authority to represent the winery</li>
-            <li>You are responsible for all content posted under your account</li>
-        </ul>
-
-        <p><strong>Customer Accounts:</strong></p>
-        <ul>
-            <li>Must be at least 18 years old (or legal drinking age in your jurisdiction)</li>
-            <li>For personal, non-commercial use</li>
-        </ul>
-
-        <h2>Alcohol-Related Restrictions</h2>
-
-        <h3>Age Requirement</h3>
-        <p>You must be at least 18 years old (or the legal drinking age in your jurisdiction) to use this App. By using the App, you represent that you meet this requirement.</p>
-
-        <h3>No Sales or Delivery</h3>
-        <p>The App does not:</p>
-        <ul>
-            <li>Facilitate direct alcohol sales</li>
-            <li>Arrange alcohol delivery</li>
-            <li>Process alcohol transactions</li>
-            <li>Guarantee availability of any product</li>
-        </ul>
-        <p>All purchasing and delivery arrangements are between customers and wineries, subject to applicable laws.</p>
-
-        <h2>User Content and Conduct</h2>
-
-        <h3>Winery Owner Responsibilities</h3>
-        <p>As a winery owner, you agree to:</p>
-        <ul>
-            <li>Provide accurate information about your winery and products</li>
-            <li>Ensure wine descriptions, prices, and availability are current</li>
-            <li>Comply with all applicable alcohol regulations and licensing requirements</li>
-            <li>Own or have rights to all photos and content you upload</li>
-            <li>Not make false or misleading claims about your products</li>
-            <li>Respect intellectual property rights</li>
-        </ul>
-
-        <h3>Prohibited Activities</h3>
-        <p>You may not:</p>
-        <ul>
-            <li>Use the App if you are under the legal drinking age</li>
-            <li>Post false, inaccurate, or misleading information</li>
-            <li>Violate any local, state, national, or international law</li>
-            <li>Infringe on intellectual property rights</li>
-            <li>Transmit viruses, malware, or harmful code</li>
-            <li>Attempt to reverse engineer or hack the App</li>
-            <li>Scrape or harvest data from the App</li>
-            <li>Impersonate another person or entity</li>
-            <li>Use the App to spam or send unsolicited messages</li>
-        </ul>
-
-        <h2>Privacy</h2>
-        <p>Your privacy is important to us. Please review our <a href="privacy-policy.html">Privacy Policy</a> to understand how we collect, use, and protect your information.</p>
-
-        <h2>Disclaimers and Limitations of Liability</h2>
-
-        <h3>"As Is" Service</h3>
-        <p>THE APP IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO:</p>
-        <ul>
-            <li>Merchantability</li>
-            <li>Fitness for a particular purpose</li>
-            <li>Non-infringement</li>
-            <li>Accuracy or completeness of content</li>
-            <li>Uninterrupted or error-free operation</li>
-        </ul>
-
-        <h3>Limitation of Liability</h3>
-        <p>TO THE MAXIMUM EXTENT PERMITTED BY LAW, MARKO NONNINGER SHALL NOT BE LIABLE FOR:</p>
-        <ul>
-            <li>Indirect, incidental, special, consequential, or punitive damages</li>
-            <li>Loss of profits, data, use, or goodwill</li>
-            <li>Service interruptions or errors</li>
-            <li>User content or conduct</li>
-            <li>Third-party actions or content</li>
-        </ul>
-        <p>Our total liability shall not exceed the amount you paid to us in the past 12 months (if any).</p>
-
-        <h2>Geographic Restrictions</h2>
-        <p>The App is primarily intended for users in Germany. We make no claims that the App is accessible or appropriate outside Germany. If you access the App from other locations, you do so at your own risk and are responsible for compliance with local laws, particularly regarding alcohol regulations.</p>
-
-        <h2>Dispute Resolution</h2>
-
-        <h3>Governing Law</h3>
-        <p>These Terms are governed by the laws of Switzerland, without regard to conflict of law principles.</p>
-
-        <h3>Arbitration</h3>
-        <p>Any disputes arising from these Terms or the App shall be resolved through binding arbitration, except:</p>
-        <ul>
-            <li>Small claims court actions</li>
-            <li>Injunctive relief</li>
-            <li>Intellectual property disputes</li>
-        </ul>
-
-        <h2>Contact Us</h2>
-        <p>For questions about these Terms, please contact:</p>
-        <p><strong>Email:</strong> <a href="mailto:markono.code+support@gmail.com">markono.code+support@gmail.com</a></p>
-
-        <div class="acknowledgment">
-            <p><strong>ACKNOWLEDGMENT</strong></p>
-            <p>BY USING THE APP, YOU ACKNOWLEDGE THAT YOU HAVE READ THESE TERMS OF SERVICE AND AGREE TO BE BOUND BY THEM.</p>
-        </div>
-
-        <div class="footer">
-            <p>© 2025 Marko Nonninger. All rights reserved.</p>
-            <p style="margin-top: 10px;"><a href="index.html">Back to Documentation</a></p>
-        </div>
+    <div class="header-tools">
+      <button type="button" class="icon-btn" id="themeToggle"
+              aria-label="Colour theme: automatic" title="Colour theme: automatic">
+        <svg class="icon icon--sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <circle cx="12" cy="12" r="4.2"/>
+          <path d="M12 2.2v2.4M12 19.4v2.4M2.2 12h2.4M19.4 12h2.4M5.1 5.1l1.7 1.7M17.2 17.2l1.7 1.7M18.9 5.1l-1.7 1.7M6.8 17.2l-1.7 1.7"/>
+        </svg>
+        <svg class="icon icon--moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M20.5 14.8A8.6 8.6 0 0 1 9.2 3.5a8.6 8.6 0 1 0 11.3 11.3z"/>
+        </svg>
+      </button>
     </div>
+
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ========================================================== HERO ==== -->
+  <section class="doc-hero doc-hero--doc">
+    <div class="shell doc-hero__inner">
+      <a class="backlink" href="./">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M19 12H6M11.5 5.5 5 12l6.5 6.5"/>
+        </svg>
+        Back to documentation
+      </a>
+
+      <p class="kicker kicker--onDark">Terms</p>
+      <h1>Terms of Service</h1>
+      <p class="doc-hero__lead">
+        The agreement between you and Ausgetrunken: who may hold an account, what
+        the platform does and deliberately does not do, and what is expected of
+        winery owners.
+      </p>
+
+      <div class="doc-meta">
+        <span class="doc-meta__item">
+          <span class="doc-meta__key">Last updated</span>
+          <span class="doc-meta__val"><time datetime="2026-09-09">9 September 2026</time></span>
+        </span>
+        <span class="doc-meta__item">
+          <span class="doc-meta__key">Governing law</span>
+          <span class="doc-meta__val">Switzerland</span>
+        </span>
+        <span class="doc-meta__item">
+          <span class="doc-meta__key">Minimum age</span>
+          <span class="doc-meta__val">18 years</span>
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================== BODY ==== -->
+  <div class="shell doc-layout">
+
+    <aside class="toc" aria-labelledby="toc-title">
+      <p class="toc__title" id="toc-title">Contents</p>
+      <nav class="toc__list">
+        <a class="toc__link" href="#agreement"><span class="toc__num">01</span>Agreement to terms</a>
+        <a class="toc__link" href="#service"><span class="toc__num">02</span>Description of service</a>
+        <a class="toc__link" href="#accounts"><span class="toc__num">03</span>User accounts</a>
+        <a class="toc__link" href="#alcohol"><span class="toc__num">04</span>Alcohol-related restrictions</a>
+        <a class="toc__link" href="#conduct"><span class="toc__num">05</span>User content and conduct</a>
+        <a class="toc__link" href="#privacy"><span class="toc__num">06</span>Privacy</a>
+        <a class="toc__link" href="#disclaimers"><span class="toc__num">07</span>Disclaimers and liability</a>
+        <a class="toc__link" href="#geography"><span class="toc__num">08</span>Geographic restrictions</a>
+        <a class="toc__link" href="#disputes"><span class="toc__num">09</span>Dispute resolution</a>
+        <a class="toc__link" href="#contact"><span class="toc__num">10</span>Contact us</a>
+      </nav>
+    </aside>
+
+    <article class="legal">
+
+      <h2 id="agreement"><span class="legal__num">01</span>Agreement to Terms</h2>
+      <p>
+        By accessing or using the Ausgetrunken mobile application
+        (&ldquo;App&rdquo;), you agree to be bound by these Terms of Service
+        (&ldquo;Terms&rdquo;). If you do not agree to these Terms, please do not
+        use the App.
+      </p>
+      <p>
+        The App is operated by <strong>Marko Nonninger</strong>, Winterthur,
+        Switzerland, and is available for Android and iOS.
+      </p>
+
+      <h2 id="service"><span class="legal__num">02</span>Description of Service</h2>
+      <p>Ausgetrunken is a mobile platform, available for Android and iOS, that:</p>
+      <ul>
+        <li>Connects winery owners with wine enthusiasts</li>
+        <li>Allows winery owners to showcase and manage their wine inventory</li>
+        <li>Enables customers to discover wineries, browse wine catalogs, and receive inventory notifications</li>
+        <li>Provides location-based winery discovery features</li>
+      </ul>
+
+      <h2 id="accounts"><span class="legal__num">03</span>User Accounts</h2>
+
+      <h3>Registration</h3>
+      <p>To use certain features of the App, you must register for an account. You agree to:</p>
+      <ul>
+        <li>Provide accurate, current, and complete information</li>
+        <li>Maintain and update your information to keep it accurate</li>
+        <li>Maintain the security of your password and account</li>
+        <li>Accept responsibility for all activities under your account</li>
+        <li>Notify us immediately of any unauthorized use</li>
+      </ul>
+
+      <h3>Account types</h3>
+      <p><strong>Winery owner accounts:</strong></p>
+      <ul>
+        <li>For commercial winery operations only</li>
+        <li>You must have legal authority to represent the winery</li>
+        <li>You are responsible for all content posted under your account</li>
+      </ul>
+
+      <p><strong>Customer accounts:</strong></p>
+      <ul>
+        <li>Must be at least 18 years old (or legal drinking age in your jurisdiction)</li>
+        <li>For personal, non-commercial use</li>
+      </ul>
+
+      <h3>Paid plans</h3>
+      <p>
+        Winery owners may purchase a subscription. Purchases are processed by
+        Google Play on Android and by the App Store on iOS, and are subject to
+        that store's terms, billing cycle and refund rules. Manage or cancel a
+        subscription in your store account — cancellation takes effect at the end
+        of the current billing period.
+      </p>
+
+      <h3>Deleting your account</h3>
+      <p>
+        You can delete your account at any time under
+        <strong>Settings &rarr; Delete account</strong>. Deletion is reversible
+        for 30 days by signing back in, and permanent afterwards. See the
+        <a href="delete-account/">account deletion page</a> and section 6 of the
+        <a href="privacy-policy.html#deletion">Privacy Policy</a>. Deleting your
+        account does not by itself cancel a store subscription.
+      </p>
+
+      <h2 id="alcohol"><span class="legal__num">04</span>Alcohol-Related Restrictions</h2>
+
+      <h3>Age requirement</h3>
+      <div class="callout">
+        <span class="callout__label">Important</span>
+        <p>
+          You must be at least 18 years old (or the legal drinking age in your
+          jurisdiction) to use this App. By using the App, you represent that you
+          meet this requirement.
+        </p>
+      </div>
+
+      <h3>No sales or delivery</h3>
+      <p>The App does not:</p>
+      <ul>
+        <li>Facilitate direct alcohol sales</li>
+        <li>Arrange alcohol delivery</li>
+        <li>Process alcohol transactions</li>
+        <li>Guarantee availability of any product</li>
+      </ul>
+      <p>
+        All purchasing and delivery arrangements are between customers and
+        wineries, subject to applicable laws.
+      </p>
+
+      <h2 id="conduct"><span class="legal__num">05</span>User Content and Conduct</h2>
+
+      <h3>Winery owner responsibilities</h3>
+      <p>As a winery owner, you agree to:</p>
+      <ul>
+        <li>Provide accurate information about your winery and products</li>
+        <li>Ensure wine descriptions, prices, and availability are current</li>
+        <li>Comply with all applicable alcohol regulations and licensing requirements</li>
+        <li>Own or have rights to all photos and content you upload</li>
+        <li>Not make false or misleading claims about your products</li>
+        <li>Respect intellectual property rights</li>
+      </ul>
+
+      <h3>Prohibited activities</h3>
+      <p>You may not:</p>
+      <ul>
+        <li>Use the App if you are under the legal drinking age</li>
+        <li>Post false, inaccurate, or misleading information</li>
+        <li>Violate any local, state, national, or international law</li>
+        <li>Infringe on intellectual property rights</li>
+        <li>Transmit viruses, malware, or harmful code</li>
+        <li>Attempt to reverse engineer or hack the App</li>
+        <li>Scrape or harvest data from the App</li>
+        <li>Impersonate another person or entity</li>
+        <li>Use the App to spam or send unsolicited messages</li>
+      </ul>
+
+      <h2 id="privacy"><span class="legal__num">06</span>Privacy</h2>
+      <p>
+        Your privacy is important to us. Please review our
+        <a href="privacy-policy.html">Privacy Policy</a> to understand how we
+        collect, use, and protect your information.
+      </p>
+
+      <h2 id="disclaimers"><span class="legal__num">07</span>Disclaimers and Limitations of Liability</h2>
+
+      <h3>&ldquo;As is&rdquo; service</h3>
+      <p class="allcaps">
+        THE APP IS PROVIDED &ldquo;AS IS&rdquo; AND &ldquo;AS AVAILABLE&rdquo;
+        WITHOUT WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
+        LIMITED TO:
+      </p>
+      <ul class="allcaps">
+        <li>Merchantability</li>
+        <li>Fitness for a particular purpose</li>
+        <li>Non-infringement</li>
+        <li>Accuracy or completeness of content</li>
+        <li>Uninterrupted or error-free operation</li>
+      </ul>
+
+      <h3>Limitation of liability</h3>
+      <p class="allcaps">
+        TO THE MAXIMUM EXTENT PERMITTED BY LAW, MARKO NONNINGER SHALL NOT BE
+        LIABLE FOR:
+      </p>
+      <ul>
+        <li>Indirect, incidental, special, consequential, or punitive damages</li>
+        <li>Loss of profits, data, use, or goodwill</li>
+        <li>Service interruptions or errors</li>
+        <li>User content or conduct</li>
+        <li>Third-party actions or content</li>
+      </ul>
+      <p>
+        Our total liability shall not exceed the amount you paid to us in the past
+        12 months (if any).
+      </p>
+
+      <h2 id="geography"><span class="legal__num">08</span>Geographic Restrictions</h2>
+      <p>
+        The App is primarily intended for users in Germany. We make no claims that
+        the App is accessible or appropriate outside Germany. If you access the App
+        from other locations, you do so at your own risk and are responsible for
+        compliance with local laws, particularly regarding alcohol regulations.
+      </p>
+
+      <h2 id="disputes"><span class="legal__num">09</span>Dispute Resolution</h2>
+
+      <h3>Governing law</h3>
+      <p>
+        These Terms are governed by the laws of Switzerland, without regard to
+        conflict of law principles.
+      </p>
+
+      <h3>Arbitration</h3>
+      <p>Any disputes arising from these Terms or the App shall be resolved through binding arbitration, except:</p>
+      <ul>
+        <li>Small claims court actions</li>
+        <li>Injunctive relief</li>
+        <li>Intellectual property disputes</li>
+      </ul>
+
+      <h2 id="contact"><span class="legal__num">10</span>Contact Us</h2>
+      <div class="panel">
+        <p>For questions about these Terms, please contact:</p>
+        <p><strong>Email:</strong> <a href="mailto:ausgetrunken@markono.dev">ausgetrunken@markono.dev</a></p>
+      </div>
+
+      <div class="panel">
+        <span class="panel__label">Acknowledgment</span>
+        <p class="allcaps">
+          BY USING THE APP, YOU ACKNOWLEDGE THAT YOU HAVE READ THESE TERMS OF
+          SERVICE AND AGREE TO BE BOUND BY THEM.
+        </p>
+      </div>
+
+      <p class="legal__foot">
+        &copy; <span id="year">2026</span> Marko Nonninger. All rights reserved.<br>
+        Last updated: <time datetime="2026-09-09">9 September 2026</time>
+      </p>
+
+    </article>
+  </div>
+
+</main>
+
+<!-- ============================================================ FOOTER ==== -->
+<footer class="site-footer">
+  <div class="shell site-footer__inner">
+    <div class="site-footer__brand">
+      <span class="brand__text">Ausgetrunken</span>
+      <span class="site-footer__tagline">Connecting wine lovers with local wineries</span>
+    </div>
+
+    <nav class="site-footer__links" aria-label="Documents">
+      <a href="./">Overview</a>
+      <a href="about.html">About</a>
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="delete-account/">Delete account</a>
+      <a href="https://markono.dev/" rel="noopener">markono.dev</a>
+    </nav>
+
+    <div class="site-footer__meta">
+      <span>&copy; 2026 Marko Nonninger. All rights reserved.</span>
+      <span class="site-footer__built">Primarily available in Germany · Governed by Swiss law</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/docs.js"></script>
 </body>
 </html>

@@ -1,299 +1,485 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="auto">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - Ausgetrunken</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.8;
-            color: #333;
-            background: #f5f5f5;
-            padding: 20px;
-        }
+<title>Privacy Policy — Ausgetrunken</title>
+<meta name="description" content="Privacy policy for Ausgetrunken: what data is collected from winery owners and customers, which services process it, how to delete your account, and your rights under GDPR and CCPA.">
+<meta name="author" content="Marko Nonninger">
+<link rel="canonical" href="https://markono-code.github.io/Ausgetrunken-Docs/privacy-policy.html">
 
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            background: white;
-            padding: 60px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
+<link rel="alternate" hreflang="en" href="https://markono-code.github.io/Ausgetrunken-Docs/privacy-policy.html">
+<link rel="alternate" hreflang="de" href="https://markono-code.github.io/Ausgetrunken-Docs/datenschutzerklaerung.html">
 
-        .back-link {
-            display: inline-block;
-            color: #722F37;
-            text-decoration: none;
-            margin-bottom: 30px;
-            font-weight: 500;
-        }
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://markono-code.github.io/Ausgetrunken-Docs/privacy-policy.html">
+<meta property="og:title" content="Privacy Policy — Ausgetrunken">
+<meta property="og:description" content="What data Ausgetrunken collects, who processes it, and the rights you have over it.">
 
-        .back-link:hover {
-            text-decoration: underline;
-        }
+<meta name="theme-color" content="#fdfbf7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#121111" media="(prefers-color-scheme: dark)">
 
-        h1 {
-            color: #722F37;
-            font-size: 36px;
-            margin-bottom: 10px;
-        }
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&display=swap">
+<link rel="stylesheet" href="assets/css/docs.css">
 
-        .last-updated {
-            color: #666;
-            font-size: 14px;
-            margin-bottom: 40px;
-            font-weight: 600;
-        }
-
-        h2 {
-            color: #2F2F2F;
-            font-size: 28px;
-            margin-top: 50px;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #f0f0f0;
-        }
-
-        h3 {
-            color: #555;
-            font-size: 22px;
-            margin-top: 30px;
-            margin-bottom: 15px;
-        }
-
-        p {
-            margin-bottom: 15px;
-            color: #444;
-        }
-
-        ul, ol {
-            margin-left: 30px;
-            margin-bottom: 20px;
-        }
-
-        li {
-            margin-bottom: 10px;
-            color: #444;
-        }
-
-        strong {
-            color: #2F2F2F;
-        }
-
-        a {
-            color: #722F37;
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        .footer {
-            margin-top: 60px;
-            padding-top: 30px;
-            border-top: 2px solid #f0f0f0;
-            text-align: center;
-            color: #666;
-            font-size: 14px;
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                padding: 30px 20px;
-            }
-
-            h1 {
-                font-size: 28px;
-            }
-
-            h2 {
-                font-size: 22px;
-            }
-
-            h3 {
-                font-size: 18px;
-            }
-        }
-    </style>
+<script>
+  (function () {
+    try {
+      var t = localStorage.getItem("markono.theme");
+      if (t === "light" || t === "dark" || t === "auto") {
+        document.documentElement.setAttribute("data-theme", t);
+      }
+    } catch (e) { /* private mode — the "auto" default in the markup stands */ }
+  })();
+</script>
 </head>
+
 <body>
-    <div class="container">
-        <a href="index.html" class="back-link">← Back to Documentation</a>
 
-        <h1>Privacy Policy for Ausgetrunken</h1>
-        <p class="last-updated"><strong>Last Updated: January 23, 2025</strong></p>
+<a class="skip-link" href="#main">Skip to content</a>
 
-        <h2>Introduction</h2>
-        <p>Marko Nonninger ("we," "our," or "us") operates the Ausgetrunken mobile application (the "App"). This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our App.</p>
-        <p>Please read this privacy policy carefully. If you do not agree with the terms of this privacy policy, please do not access the App.</p>
+<!-- ============================================================ HEADER ==== -->
+<header class="site-header">
+  <div class="shell site-header__inner">
 
-        <h2>Information We Collect</h2>
+    <a class="brand" href="./" aria-label="Ausgetrunken documentation — home">
+      <img class="brand__logo" src="assets/img/ausgetrunken-icon.svg" alt="" width="32" height="32">
+      <span>
+        <span class="brand__text">Ausgetrunken</span>
+        <span class="brand__sub">Legal &amp; Privacy</span>
+      </span>
+    </a>
 
-        <h3>Personal Information</h3>
-        <p>When you register for and use the App, we may collect:</p>
+    <nav class="site-nav" aria-label="Documents">
+      <a class="site-nav__link" href="about.html">About</a>
+      <a class="site-nav__link" href="privacy-policy.html" aria-current="page">Privacy</a>
+      <a class="site-nav__link" href="terms-of-service.html">Terms</a>
+      <a class="site-nav__link" href="delete-account/">Delete account</a>
+    </nav>
 
-        <p><strong>For All Users:</strong></p>
-        <ul>
-            <li>Email address</li>
-            <li>User type (Winery Owner or Customer)</li>
-            <li>Profile information you provide</li>
-            <li>Authentication credentials</li>
-        </ul>
+    <div class="header-tools">
+      <div class="lang-switch" role="group" aria-label="Language">
+        <a class="lang-switch__btn" href="privacy-policy.html" hreflang="en" aria-current="true">EN</a>
+        <a class="lang-switch__btn" href="datenschutzerklaerung.html" hreflang="de">DE</a>
+      </div>
 
-        <p><strong>For Winery Owners:</strong></p>
-        <ul>
-            <li>Winery name and description</li>
-            <li>Location and address information</li>
-            <li>Contact information</li>
-            <li>Winery photos (up to 3)</li>
-            <li>Wine catalog information (names, descriptions, prices, vintage information)</li>
-            <li>Inventory data</li>
-        </ul>
-
-        <p><strong>For Customers:</strong></p>
-        <ul>
-            <li>Wine subscription preferences</li>
-            <li>Location data (with your permission)</li>
-            <li>Browsing history within the app</li>
-        </ul>
-
-        <h3>Automatically Collected Information</h3>
-        <p>When you use the App, we may automatically collect:</p>
-        <ul>
-            <li>Device information (model, operating system, unique device identifiers)</li>
-            <li>Usage data (features used, time spent, interactions)</li>
-            <li>Log data (IP address, access times, app crashes)</li>
-            <li>Location data (if you grant permission)</li>
-        </ul>
-
-        <h2>How We Use Your Information</h2>
-        <p>We use the collected information to:</p>
-
-        <p><strong>1. Provide and Maintain Services:</strong></p>
-        <ul>
-            <li>Create and manage user accounts</li>
-            <li>Enable winery owners to manage their catalogs</li>
-            <li>Allow customers to discover and subscribe to wineries</li>
-            <li>Send notifications about wine availability and inventory</li>
-        </ul>
-
-        <p><strong>2. Improve User Experience:</strong></p>
-        <ul>
-            <li>Personalize content and recommendations</li>
-            <li>Analyze usage patterns to improve features</li>
-            <li>Debug and fix technical issues</li>
-        </ul>
-
-        <p><strong>3. Communication:</strong></p>
-        <ul>
-            <li>Send important updates about the service</li>
-            <li>Respond to inquiries and support requests</li>
-            <li>Send notifications you've subscribed to</li>
-        </ul>
-
-        <p><strong>4. Safety and Security:</strong></p>
-        <ul>
-            <li>Detect and prevent fraud or abuse</li>
-            <li>Enforce our Terms of Service</li>
-            <li>Protect against technical issues</li>
-        </ul>
-
-        <h2>Data Storage and Security</h2>
-
-        <h3>Firebase Services</h3>
-        <p>We use Firebase (Google) services for:</p>
-        <ul>
-            <li><strong>Authentication:</strong> Secure user login and registration</li>
-            <li><strong>Cloud Firestore:</strong> Storing winery and wine information</li>
-            <li><strong>Cloud Storage:</strong> Storing winery and wine photos</li>
-            <li><strong>Cloud Messaging:</strong> Sending push notifications</li>
-        </ul>
-        <p>Your data is stored on Firebase servers and is subject to Google's security practices and data processing terms.</p>
-
-        <h3>Security Measures</h3>
-        <p>We implement industry-standard security measures to protect your information:</p>
-        <ul>
-            <li>Encrypted data transmission (HTTPS/TLS)</li>
-            <li>Secure authentication protocols</li>
-            <li>Access controls and authentication</li>
-            <li>Regular security updates</li>
-        </ul>
-        <p>However, no method of transmission over the internet is 100% secure, and we cannot guarantee absolute security.</p>
-
-        <h2>Your Rights and Choices</h2>
-
-        <h3>Access and Update</h3>
-        <p>You can access and update your profile information within the App at any time.</p>
-
-        <h3>Account Deletion</h3>
-        <p>You can request deletion of your account by contacting us. Upon deletion:</p>
-        <ul>
-            <li>Your personal information will be removed</li>
-            <li>Public information (wine listings, reviews) may be anonymized rather than deleted to maintain data integrity</li>
-        </ul>
-
-        <h3>Location Services</h3>
-        <p>You can enable or disable location services through your device settings. Note that some features (like winery discovery on map) require location access.</p>
-
-        <h3>Push Notifications</h3>
-        <p>You can opt out of push notifications through:</p>
-        <ul>
-            <li>App settings</li>
-            <li>Device notification settings</li>
-            <li>Unsubscribing from specific wine notifications</li>
-        </ul>
-
-        <h2>Children's Privacy</h2>
-        <p>The App is not intended for users under 18 years of age (or the minimum legal drinking age in your jurisdiction). We do not knowingly collect information from children. If you believe we have collected information from a child, please contact us immediately.</p>
-
-        <h2>Data Retention</h2>
-        <p>We retain your information for as long as:</p>
-        <ul>
-            <li>Your account is active</li>
-            <li>Needed to provide services</li>
-            <li>Required by law</li>
-            <li>Necessary for legitimate business purposes</li>
-        </ul>
-        <p>When you delete your account, we will delete or anonymize your personal information within 30 days, unless we are required to retain it by law.</p>
-
-        <h2>Contact Us</h2>
-        <p>If you have questions or concerns about this Privacy Policy, please contact us:</p>
-        <p><strong>Email:</strong> <a href="mailto:markono.code+support@gmail.com">markono.code+support@gmail.com</a></p>
-
-        <h2>Legal Compliance</h2>
-        <p>This Privacy Policy complies with:</p>
-        <ul>
-            <li>General Data Protection Regulation (GDPR) for EU users</li>
-            <li>California Consumer Privacy Act (CCPA) for California users</li>
-            <li>Google Play Store requirements</li>
-        </ul>
-
-        <h3>GDPR Rights (EU Users)</h3>
-        <p>If you are in the European Economic Area (EEA), you have the right to:</p>
-        <ul>
-            <li>Access your personal data</li>
-            <li>Rectify inaccurate data</li>
-            <li>Request erasure of your data</li>
-            <li>Restrict processing of your data</li>
-            <li>Data portability</li>
-            <li>Object to processing</li>
-            <li>Withdraw consent</li>
-        </ul>
-        <p>To exercise these rights, please contact us using the information above.</p>
-
-        <div class="footer">
-            <p>© 2025 Marko Nonninger. All rights reserved.</p>
-            <p style="margin-top: 10px;"><a href="index.html">Back to Documentation</a></p>
-        </div>
+      <button type="button" class="icon-btn" id="themeToggle"
+              aria-label="Colour theme: automatic" title="Colour theme: automatic">
+        <svg class="icon icon--sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <circle cx="12" cy="12" r="4.2"/>
+          <path d="M12 2.2v2.4M12 19.4v2.4M2.2 12h2.4M19.4 12h2.4M5.1 5.1l1.7 1.7M17.2 17.2l1.7 1.7M18.9 5.1l-1.7 1.7M6.8 17.2l-1.7 1.7"/>
+        </svg>
+        <svg class="icon icon--moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M20.5 14.8A8.6 8.6 0 0 1 9.2 3.5a8.6 8.6 0 1 0 11.3 11.3z"/>
+        </svg>
+      </button>
     </div>
+
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ========================================================== HERO ==== -->
+  <section class="doc-hero doc-hero--doc">
+    <div class="shell doc-hero__inner">
+      <a class="backlink" href="./">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M19 12H6M11.5 5.5 5 12l6.5 6.5"/>
+        </svg>
+        Back to documentation
+      </a>
+
+      <p class="kicker kicker--onDark">Privacy</p>
+      <h1>Privacy Policy</h1>
+      <p class="doc-hero__lead">
+        How Ausgetrunken collects, uses, discloses and safeguards your
+        information — for winery owners and for customers, on Android and iOS.
+      </p>
+
+      <div class="doc-meta">
+        <span class="doc-meta__item">
+          <span class="doc-meta__key">Last updated</span>
+          <span class="doc-meta__val"><time datetime="2026-09-09">9 September 2026</time></span>
+        </span>
+        <span class="doc-meta__item">
+          <span class="doc-meta__key">Applies to</span>
+          <span class="doc-meta__val">Android &amp; iOS</span>
+        </span>
+        <span class="doc-meta__item">
+          <span class="doc-meta__key">Language</span>
+          <span class="doc-meta__val">English · <a href="datenschutzerklaerung.html" hreflang="de" lang="de">Deutsch</a></span>
+        </span>
+        <span class="doc-meta__item">
+          <span class="doc-meta__key">Contact</span>
+          <span class="doc-meta__val"><a href="mailto:ausgetrunken@markono.dev">ausgetrunken@markono.dev</a></span>
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================== BODY ==== -->
+  <div class="shell doc-layout">
+
+    <aside class="toc" aria-labelledby="toc-title">
+      <p class="toc__title" id="toc-title">Contents</p>
+      <nav class="toc__list">
+        <a class="toc__link" href="#controller"><span class="toc__num">01</span>Who is responsible</a>
+        <a class="toc__link" href="#collect"><span class="toc__num">02</span>Information we collect</a>
+        <a class="toc__link" href="#use"><span class="toc__num">03</span>How we use your information</a>
+        <a class="toc__link" href="#processors"><span class="toc__num">04</span>Services that process data</a>
+        <a class="toc__link" href="#rights"><span class="toc__num">05</span>Your rights and choices</a>
+        <a class="toc__link" href="#deletion"><span class="toc__num">06</span>Deleting your account</a>
+        <a class="toc__link" href="#children"><span class="toc__num">07</span>Children's privacy</a>
+        <a class="toc__link" href="#retention"><span class="toc__num">08</span>Data retention</a>
+        <a class="toc__link" href="#compliance"><span class="toc__num">09</span>Legal compliance</a>
+        <a class="toc__link" href="#contact"><span class="toc__num">10</span>Contact us</a>
+      </nav>
+    </aside>
+
+    <article class="legal">
+
+      <div class="callout">
+        <span class="callout__label">In short</span>
+        <p>
+          Ausgetrunken stores the account you create, the winery and wine
+          information you enter, and the wineries you subscribe to. It does not
+          sell your data. You can delete your account and everything attached to
+          it from inside the app, on either platform, and change your mind for
+          30 days.
+        </p>
+      </div>
+
+      <h2 id="controller"><span class="legal__num">01</span>Who Is Responsible</h2>
+      <p>
+        Marko Nonninger (&ldquo;we,&rdquo; &ldquo;our,&rdquo; or &ldquo;us&rdquo;)
+        operates the Ausgetrunken mobile application (the &ldquo;App&rdquo;) for
+        Android and iOS. This Privacy Policy explains how we collect, use,
+        disclose and safeguard your information when you use the App.
+      </p>
+      <div class="panel">
+        <span class="panel__label">Data controller</span>
+        <p>
+          <strong>Marko Nonninger</strong><br>
+          Winterthur, Switzerland
+        </p>
+        <p><strong>Contact:</strong> <a href="mailto:ausgetrunken@markono.dev">ausgetrunken@markono.dev</a></p>
+      </div>
+      <p>
+        Please read this policy carefully. If you do not agree with it, please do
+        not use the App.
+      </p>
+
+      <h2 id="collect"><span class="legal__num">02</span>Information We Collect</h2>
+
+      <h3>Account information</h3>
+      <p>
+        You can sign in with an email address and password, with Sign in with
+        Apple, or with a Google account. In every case we store:
+      </p>
+      <ul>
+        <li>Email address</li>
+        <li>User type (Winery Owner or Customer)</li>
+        <li>Profile information you provide</li>
+        <li>Authentication credentials, handled by our authentication provider</li>
+      </ul>
+      <p>
+        If you use Sign in with Apple and choose to hide your address, we only
+        ever see the relay address Apple gives us. When you sign in with Apple we
+        also store a refresh token, so that deleting your account can revoke
+        Apple's grant on your behalf.
+      </p>
+
+      <h3>For winery owners</h3>
+      <ul>
+        <li>Winery name and description</li>
+        <li>Location and address information</li>
+        <li>Contact information</li>
+        <li>Winery photos</li>
+        <li>Wine catalog information (names, descriptions, prices, vintage information)</li>
+        <li>Inventory data</li>
+        <li>Subscription status, if you purchase a paid plan</li>
+      </ul>
+
+      <h3>For customers</h3>
+      <ul>
+        <li>Wine and winery subscriptions, favourites, ratings and reviews you create</li>
+        <li>Location data, only while you use map or nearby features and only with your permission</li>
+        <li>Notification preferences</li>
+      </ul>
+
+      <h3>Automatically collected information</h3>
+      <ul>
+        <li>Device and app information (model, operating system, app version)</li>
+        <li>Usage data (features used, interactions) via analytics</li>
+        <li>Crash reports, including the technical state of the app at the moment it failed</li>
+        <li>A push notification token, if you allow notifications</li>
+      </ul>
+
+      <h2 id="use"><span class="legal__num">03</span>How We Use Your Information</h2>
+
+      <h3>Provide and maintain the service</h3>
+      <ul>
+        <li>Create and manage user accounts</li>
+        <li>Enable winery owners to manage their profiles, catalogs and inventory</li>
+        <li>Allow customers to discover wineries and subscribe to them</li>
+        <li>Send notifications about wine availability and inventory</li>
+        <li>Verify and maintain paid subscriptions for winery owners</li>
+      </ul>
+
+      <h3>Improve the app</h3>
+      <ul>
+        <li>Analyse usage patterns to decide what to build and what to fix</li>
+        <li>Diagnose crashes and technical issues</li>
+      </ul>
+
+      <h3>Communicate with you</h3>
+      <ul>
+        <li>Send important updates about the service</li>
+        <li>Respond to inquiries and support requests</li>
+        <li>Send the notifications you subscribed to</li>
+      </ul>
+
+      <h3>Safety and security</h3>
+      <ul>
+        <li>Detect and prevent fraud or abuse</li>
+        <li>Enforce our Terms of Service</li>
+        <li>Protect against technical issues</li>
+      </ul>
+
+      <h2 id="processors"><span class="legal__num">04</span>Services That Process Your Data</h2>
+      <p>
+        We do not sell your data. It is shared only with the service providers
+        below, each for a single, named purpose, and with the other users you
+        deliberately share it with — a winery profile you publish is visible to
+        customers by design.
+      </p>
+
+      <h3>Supabase — accounts, database and photos</h3>
+      <p>
+        Supabase provides authentication, the database holding winery, wine,
+        subscription and notification records, file storage for all uploaded
+        photos, and the server functions that run scheduled tasks such as account
+        deletion. This is where the substance of your data lives.
+      </p>
+
+      <h3>Google Firebase — notifications, crashes and analytics</h3>
+      <ul>
+        <li><strong>Firebase Cloud Messaging:</strong> delivers push notifications to your device</li>
+        <li><strong>Firebase Crashlytics:</strong> collects crash reports so failures can be diagnosed</li>
+        <li><strong>Firebase Analytics:</strong> collects aggregated usage statistics (Android)</li>
+      </ul>
+
+      <h3>Google Maps</h3>
+      <p>
+        The map and location-picker features use the Google Maps SDK. When you
+        open a map, your approximate or precise location may be processed by
+        Google in order to render it.
+      </p>
+
+      <h3>App stores and payments</h3>
+      <p>
+        Paid winery subscriptions are processed by <strong>Google Play Billing</strong>
+        on Android and by <strong>Apple's App Store</strong> on iOS. Payment
+        details are handled entirely by the respective store — we never see or
+        store your card data. We receive only the fact that a subscription is
+        active and when it expires.
+      </p>
+
+      <h3>Legal requirements</h3>
+      <p>Data may additionally be disclosed where the law requires it.</p>
+
+      <div class="panel">
+        <span class="panel__label">Note on transfers</span>
+        <p>
+          These providers may process data outside Switzerland and the EEA,
+          including in the United States, under the transfer mechanisms in their
+          own data processing terms.
+        </p>
+      </div>
+
+      <h3>Security measures</h3>
+      <ul>
+        <li>Encrypted data transmission (HTTPS/TLS)</li>
+        <li>Row Level Security in the database, so each account reaches only its own records</li>
+        <li>Secure authentication protocols</li>
+        <li>Regular security updates</li>
+      </ul>
+      <p>
+        However, no method of transmission over the internet is 100% secure, and
+        we cannot guarantee absolute security.
+      </p>
+
+      <h2 id="rights"><span class="legal__num">05</span>Your Rights and Choices</h2>
+
+      <h3>Access and update</h3>
+      <p>You can access and update your profile information within the App at any time.</p>
+
+      <h3>Location services</h3>
+      <p>
+        You can enable or disable location access in your device settings. Map and
+        nearby-winery features need it; the rest of the App works without it.
+      </p>
+
+      <h3>Push notifications</h3>
+      <p>You can opt out of push notifications through:</p>
+      <ul>
+        <li>App settings</li>
+        <li>Device notification settings</li>
+        <li>Unsubscribing from a specific winery or wine</li>
+      </ul>
+
+      <h3>Analytics and crash reporting</h3>
+      <p>
+        You can limit advertising and analytics identifiers in your device
+        settings (Android: <em>Privacy &rarr; Ads</em>; iOS: <em>Privacy &amp;
+        Security &rarr; Tracking</em>).
+      </p>
+
+      <h2 id="deletion"><span class="legal__num">06</span>Deleting Your Account</h2>
+      <div class="callout">
+        <p>
+          <strong>You can delete your account and all associated data at any
+          time, directly in the App, on both Android and iOS.</strong>
+          Open your <strong>profile</strong> (winery owners on iOS: tap your
+          profile picture), choose <strong>Delete account</strong> and confirm.
+        </p>
+      </div>
+
+      <h3>What happens</h3>
+      <ul>
+        <li>Your account is marked for deletion and you are signed out immediately.</li>
+        <li><strong>For 30 days you can undo it</strong> by simply signing in again. Nothing has been removed yet during that window.</li>
+        <li>After 30 days a scheduled job permanently deletes the account. This step is irreversible.</li>
+      </ul>
+
+      <h3>What is deleted</h3>
+      <ul>
+        <li>Your user account and login credentials</li>
+        <li>Your profile and, for winery owners, your winery and its entire wine catalog</li>
+        <li>All uploaded photos — profile, winery, wine and presentation images</li>
+        <li>Ratings, reviews, favourites and flavour tags you created</li>
+        <li>Your winery and wine subscriptions, and your stored notifications</li>
+        <li>Your subscription records and your push notification token</li>
+        <li>The Sign in with Apple grant, which is revoked with Apple on your behalf</li>
+      </ul>
+
+      <div class="panel panel--warn">
+        <span class="panel__label">Irreversible after the grace period</span>
+        <p>
+          Once the 30 days have elapsed and the deletion has run, the data cannot
+          be recovered. If you lose access to the App before you can delete your
+          account, write to
+          <a href="mailto:ausgetrunken@markono.dev">ausgetrunken@markono.dev</a>
+          from your registered email address. Full details are on the
+          <a href="delete-account/">account deletion page</a>.
+        </p>
+      </div>
+
+      <h2 id="children"><span class="legal__num">07</span>Children's Privacy</h2>
+      <div class="callout">
+        <span class="callout__label">Age requirement</span>
+        <p>
+          The App is not intended for users under 18 years of age (or the minimum
+          legal drinking age in your jurisdiction). We do not knowingly collect
+          information from children. If you believe we have collected information
+          from a child, please contact us immediately.
+        </p>
+      </div>
+
+      <h2 id="retention"><span class="legal__num">08</span>Data Retention</h2>
+      <p>We retain your information for as long as:</p>
+      <ul>
+        <li>Your account is active</li>
+        <li>It is needed to provide the service</li>
+        <li>It is required by law</li>
+      </ul>
+      <p>
+        When you delete your account, everything listed in section 6 is removed
+        after the 30-day grace period, unless we are required to retain something
+        by law. Crash reports and aggregated analytics are kept by the respective
+        provider under their own retention periods and are not linked back to your
+        account once it is gone.
+      </p>
+
+      <h2 id="compliance"><span class="legal__num">09</span>Legal Compliance</h2>
+      <p>This Privacy Policy is written to comply with:</p>
+      <ul>
+        <li>The Swiss Federal Act on Data Protection (FADP)</li>
+        <li>The General Data Protection Regulation (GDPR) for users in the EU and EEA</li>
+        <li>The California Consumer Privacy Act (CCPA) for California users</li>
+        <li>Google Play and Apple App Store requirements</li>
+      </ul>
+
+      <h3>GDPR rights (EU/EEA users)</h3>
+      <p>If you are in the European Economic Area, you have the right to:</p>
+      <ul>
+        <li>Access your personal data</li>
+        <li>Rectify inaccurate data</li>
+        <li>Request erasure of your data</li>
+        <li>Restrict processing of your data</li>
+        <li>Data portability</li>
+        <li>Object to processing</li>
+        <li>Withdraw consent</li>
+        <li>Lodge a complaint with your supervisory authority</li>
+      </ul>
+      <p>To exercise these rights, contact us using the address below.</p>
+
+      <h2 id="contact"><span class="legal__num">10</span>Contact Us</h2>
+      <div class="panel">
+        <p>For questions about this Privacy Policy, your data, or a deletion request:</p>
+        <p><strong>Email:</strong> <a href="mailto:ausgetrunken@markono.dev">ausgetrunken@markono.dev</a></p>
+        <p>
+          <strong>For deletion requests by email:</strong> please write from the
+          address your account is registered with, so it can be identified without
+          further questions.
+        </p>
+      </div>
+
+      <h3>Changes to this policy</h3>
+      <p>
+        We may update this Privacy Policy from time to time. Changes are announced
+        in the App and on this page, and the date at the top always reflects the
+        current version.
+      </p>
+
+      <p class="legal__foot">
+        &copy; <span id="year">2026</span> Marko Nonninger. All rights reserved.<br>
+        Last updated: <time datetime="2026-09-09">9 September 2026</time>
+      </p>
+
+    </article>
+  </div>
+
+</main>
+
+<!-- ============================================================ FOOTER ==== -->
+<footer class="site-footer">
+  <div class="shell site-footer__inner">
+    <div class="site-footer__brand">
+      <span class="brand__text">Ausgetrunken</span>
+      <span class="site-footer__tagline">Connecting wine lovers with local wineries</span>
+    </div>
+
+    <nav class="site-footer__links" aria-label="Documents">
+      <a href="./">Overview</a>
+      <a href="about.html">About</a>
+      <a href="terms-of-service.html">Terms of Service</a>
+      <a href="delete-account/">Delete account</a>
+      <a href="https://markono.dev/" rel="noopener">markono.dev</a>
+    </nav>
+
+    <div class="site-footer__meta">
+      <span>&copy; 2026 Marko Nonninger. All rights reserved.</span>
+      <span class="site-footer__built">Primarily available in Germany · Governed by Swiss law</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/docs.js"></script>
 </body>
 </html>

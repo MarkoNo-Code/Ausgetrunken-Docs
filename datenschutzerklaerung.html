@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="de" data-theme="auto">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Datenschutzerklärung — Ausgetrunken</title>
+<meta name="description" content="Datenschutzerklärung für Ausgetrunken: welche Daten von Winzern und Kunden erhoben werden, welche Dienste sie verarbeiten, wie du dein Konto löschst und welche Rechte du nach DSGVO und DSG hast.">
+<meta name="author" content="Marko Nonninger">
+<link rel="canonical" href="https://markono-code.github.io/Ausgetrunken-Docs/datenschutzerklaerung.html">
+
+<link rel="alternate" hreflang="de" href="https://markono-code.github.io/Ausgetrunken-Docs/datenschutzerklaerung.html">
+<link rel="alternate" hreflang="en" href="https://markono-code.github.io/Ausgetrunken-Docs/privacy-policy.html">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://markono-code.github.io/Ausgetrunken-Docs/datenschutzerklaerung.html">
+<meta property="og:title" content="Datenschutzerklärung — Ausgetrunken">
+<meta property="og:description" content="Welche Daten Ausgetrunken erhebt, wer sie verarbeitet und welche Rechte du daran hast.">
+
+<meta name="theme-color" content="#fdfbf7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#121111" media="(prefers-color-scheme: dark)">
+
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&display=swap">
+<link rel="stylesheet" href="assets/css/docs.css">
+
+<script>
+  (function () {
+    try {
+      var t = localStorage.getItem("markono.theme");
+      if (t === "light" || t === "dark" || t === "auto") {
+        document.documentElement.setAttribute("data-theme", t);
+      }
+    } catch (e) { /* Privatmodus — der Standardwert "auto" im Markup bleibt */ }
+  })();
+</script>
+</head>
+
+<body>
+
+<a class="skip-link" href="#main">Zum Inhalt springen</a>
+
+<!-- ============================================================ HEADER ==== -->
+<header class="site-header">
+  <div class="shell site-header__inner">
+
+    <a class="brand" href="./" aria-label="Ausgetrunken Dokumentation — Startseite">
+      <img class="brand__logo" src="assets/img/ausgetrunken-icon.svg" alt="" width="32" height="32">
+      <span>
+        <span class="brand__text">Ausgetrunken</span>
+        <span class="brand__sub">Recht &amp; Datenschutz</span>
+      </span>
+    </a>
+
+    <nav class="site-nav" aria-label="Dokumente">
+      <a class="site-nav__link" href="about.html" hreflang="en">Über</a>
+      <a class="site-nav__link" href="datenschutzerklaerung.html" aria-current="page">Datenschutz</a>
+      <a class="site-nav__link" href="terms-of-service.html" hreflang="en">Nutzungsbedingungen</a>
+      <a class="site-nav__link" href="delete-account/#deutsch">Konto löschen</a>
+    </nav>
+
+    <div class="header-tools">
+      <div class="lang-switch" role="group" aria-label="Sprache">
+        <a class="lang-switch__btn" href="privacy-policy.html" hreflang="en">EN</a>
+        <a class="lang-switch__btn" href="datenschutzerklaerung.html" hreflang="de" aria-current="true">DE</a>
+      </div>
+
+      <button type="button" class="icon-btn" id="themeToggle"
+              aria-label="Farbschema: automatisch" title="Farbschema: automatisch">
+        <svg class="icon icon--sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <circle cx="12" cy="12" r="4.2"/>
+          <path d="M12 2.2v2.4M12 19.4v2.4M2.2 12h2.4M19.4 12h2.4M5.1 5.1l1.7 1.7M17.2 17.2l1.7 1.7M18.9 5.1l-1.7 1.7M6.8 17.2l-1.7 1.7"/>
+        </svg>
+        <svg class="icon icon--moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M20.5 14.8A8.6 8.6 0 0 1 9.2 3.5a8.6 8.6 0 1 0 11.3 11.3z"/>
+        </svg>
+      </button>
+    </div>
+
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ========================================================== HERO ==== -->
+  <section class="doc-hero doc-hero--doc">
+    <div class="shell doc-hero__inner">
+      <a class="backlink" href="./">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M19 12H6M11.5 5.5 5 12l6.5 6.5"/>
+        </svg>
+        Zurück zur Übersicht
+      </a>
+
+      <p class="kicker kicker--onDark">Datenschutz</p>
+      <h1>Datenschutzerklärung</h1>
+      <p class="doc-hero__lead">
+        Wie Ausgetrunken deine Daten erhebt, verwendet, weitergibt und schützt —
+        für Winzer und für Kunden, unter Android und iOS.
+      </p>
+
+      <div class="doc-meta">
+        <span class="doc-meta__item">
+          <span class="doc-meta__key">Stand</span>
+          <span class="doc-meta__val"><time datetime="2026-09-09">9. September 2026</time></span>
+        </span>
+        <span class="doc-meta__item">
+          <span class="doc-meta__key">Gilt für</span>
+          <span class="doc-meta__val">Android &amp; iOS</span>
+        </span>
+        <span class="doc-meta__item">
+          <span class="doc-meta__key">Sprache</span>
+          <span class="doc-meta__val">Deutsch · <a href="privacy-policy.html" hreflang="en">English</a></span>
+        </span>
+        <span class="doc-meta__item">
+          <span class="doc-meta__key">Kontakt</span>
+          <span class="doc-meta__val"><a href="mailto:ausgetrunken@markono.dev">ausgetrunken@markono.dev</a></span>
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================== BODY ==== -->
+  <div class="shell doc-layout">
+
+    <aside class="toc" aria-labelledby="toc-title">
+      <p class="toc__title" id="toc-title">Inhalt</p>
+      <nav class="toc__list">
+        <a class="toc__link" href="#verantwortlicher"><span class="toc__num">01</span>Verantwortlicher</a>
+        <a class="toc__link" href="#daten"><span class="toc__num">02</span>Welche Daten wir erheben</a>
+        <a class="toc__link" href="#verwendung"><span class="toc__num">03</span>Wie wir deine Daten verwenden</a>
+        <a class="toc__link" href="#dienste"><span class="toc__num">04</span>Dienste, die Daten verarbeiten</a>
+        <a class="toc__link" href="#rechte"><span class="toc__num">05</span>Deine Rechte und Wahlmöglichkeiten</a>
+        <a class="toc__link" href="#loeschung"><span class="toc__num">06</span>Konto löschen</a>
+        <a class="toc__link" href="#kinder"><span class="toc__num">07</span>Datenschutz bei Kindern</a>
+        <a class="toc__link" href="#speicherdauer"><span class="toc__num">08</span>Speicherdauer</a>
+        <a class="toc__link" href="#rechtsgrundlagen"><span class="toc__num">09</span>Rechtliche Grundlagen</a>
+        <a class="toc__link" href="#kontakt"><span class="toc__num">10</span>Kontakt</a>
+      </nav>
+    </aside>
+
+    <article class="legal">
+
+      <div class="callout">
+        <span class="callout__label">Kurz gesagt</span>
+        <p>
+          Ausgetrunken speichert das Konto, das du anlegst, die Weingut- und
+          Weindaten, die du einträgst, und die Weingüter, die du abonnierst. Deine
+          Daten werden nicht verkauft. Du kannst dein Konto samt allem, was daran
+          hängt, direkt in der App löschen — auf beiden Plattformen — und es dir
+          30 Tage lang anders überlegen.
+        </p>
+      </div>
+
+      <h2 id="verantwortlicher"><span class="legal__num">01</span>Verantwortlicher</h2>
+      <p>
+        Marko Nonninger (&bdquo;wir&ldquo;, &bdquo;uns&ldquo;) betreibt die mobile
+        App Ausgetrunken (die &bdquo;App&ldquo;) für Android und iOS. Diese
+        Datenschutzerklärung erläutert, wie wir deine Daten erheben, verwenden,
+        weitergeben und schützen, wenn du die App nutzt.
+      </p>
+      <div class="panel">
+        <span class="panel__label">Verantwortlicher</span>
+        <p>
+          <strong>Marko Nonninger</strong><br>
+          Winterthur, Schweiz
+        </p>
+        <p><strong>Kontakt:</strong> <a href="mailto:ausgetrunken@markono.dev">ausgetrunken@markono.dev</a></p>
+      </div>
+      <p>
+        Bitte lies diese Erklärung sorgfältig. Wenn du mit ihr nicht einverstanden
+        bist, nutze die App bitte nicht.
+      </p>
+
+      <h2 id="daten"><span class="legal__num">02</span>Welche Daten wir erheben</h2>
+
+      <h3>Kontodaten</h3>
+      <p>
+        Du kannst dich mit E-Mail-Adresse und Passwort, mit &bdquo;Mit Apple
+        anmelden&ldquo; oder mit einem Google-Konto anmelden. In jedem Fall
+        speichern wir:
+      </p>
+      <ul>
+        <li>E-Mail-Adresse</li>
+        <li>Nutzertyp (Winzer oder Kunde)</li>
+        <li>Profilangaben, die du selbst machst</li>
+        <li>Anmeldedaten, verwaltet von unserem Authentifizierungsanbieter</li>
+      </ul>
+      <p>
+        Nutzt du &bdquo;Mit Apple anmelden&ldquo; und verbirgst deine Adresse,
+        sehen wir nur die Weiterleitungsadresse, die Apple uns übermittelt. Bei der
+        Anmeldung mit Apple speichern wir außerdem ein Refresh-Token, damit beim
+        Löschen deines Kontos die Freigabe bei Apple in deinem Namen widerrufen
+        werden kann.
+      </p>
+
+      <h3>Für Winzer</h3>
+      <ul>
+        <li>Name und Beschreibung des Weinguts</li>
+        <li>Standort- und Adressangaben</li>
+        <li>Kontaktdaten</li>
+        <li>Fotos des Weinguts</li>
+        <li>Angaben zum Weinkatalog (Namen, Beschreibungen, Preise, Jahrgänge)</li>
+        <li>Bestandsdaten</li>
+        <li>Abo-Status, wenn du ein kostenpflichtiges Abo abschließt</li>
+      </ul>
+
+      <h3>Für Kunden</h3>
+      <ul>
+        <li>Abos von Weinen und Weingütern, Favoriten, Bewertungen und Rezensionen, die du erstellst</li>
+        <li>Standortdaten, nur während du Karten- oder Umgebungsfunktionen nutzt und nur mit deiner Erlaubnis</li>
+        <li>Benachrichtigungseinstellungen</li>
+      </ul>
+
+      <h3>Automatisch erhobene Daten</h3>
+      <ul>
+        <li>Geräte- und App-Informationen (Modell, Betriebssystem, App-Version)</li>
+        <li>Nutzungsdaten (verwendete Funktionen, Interaktionen) über Analytics</li>
+        <li>Absturzberichte, einschließlich des technischen Zustands der App im Moment des Fehlers</li>
+        <li>Ein Push-Token, wenn du Benachrichtigungen erlaubst</li>
+      </ul>
+
+      <h2 id="verwendung"><span class="legal__num">03</span>Wie wir deine Daten verwenden</h2>
+
+      <h3>Den Dienst bereitstellen und betreiben</h3>
+      <ul>
+        <li>Nutzerkonten anlegen und verwalten</li>
+        <li>Winzern ermöglichen, Profil, Katalog und Bestand zu pflegen</li>
+        <li>Kunden ermöglichen, Weingüter zu entdecken und zu abonnieren</li>
+        <li>Benachrichtigungen zu Verfügbarkeit und Bestand von Weinen senden</li>
+        <li>Kostenpflichtige Abos von Winzern prüfen und aufrechterhalten</li>
+      </ul>
+
+      <h3>Die App verbessern</h3>
+      <ul>
+        <li>Nutzungsmuster auswerten, um zu entscheiden, was gebaut und was behoben wird</li>
+        <li>Abstürze und technische Probleme diagnostizieren</li>
+      </ul>
+
+      <h3>Mit dir kommunizieren</h3>
+      <ul>
+        <li>Wichtige Hinweise zum Dienst senden</li>
+        <li>Anfragen und Support-Anliegen beantworten</li>
+        <li>Die Benachrichtigungen senden, die du abonniert hast</li>
+      </ul>
+
+      <h3>Schutz und Sicherheit</h3>
+      <ul>
+        <li>Betrug und Missbrauch erkennen und verhindern</li>
+        <li>Unsere Nutzungsbedingungen durchsetzen</li>
+        <li>Vor technischen Problemen schützen</li>
+      </ul>
+
+      <h2 id="dienste"><span class="legal__num">04</span>Dienste, die deine Daten verarbeiten</h2>
+      <p>
+        Wir verkaufen deine Daten nicht. Sie werden nur an die unten genannten
+        Dienstleister weitergegeben, jeweils für einen einzigen, benannten Zweck,
+        sowie an die Nutzer, mit denen du sie bewusst teilst — ein veröffentlichtes
+        Weingutprofil ist für Kunden sichtbar, das ist sein Zweck.
+      </p>
+
+      <h3>Supabase — Konten, Datenbank und Fotos</h3>
+      <p>
+        Supabase stellt die Anmeldung bereit, die Datenbank mit Weingütern, Weinen,
+        Abos und Benachrichtigungen, den Dateispeicher für alle hochgeladenen Fotos
+        sowie die Serverfunktionen, die geplante Aufgaben wie die Kontolöschung
+        ausführen. Hier liegt der eigentliche Bestand deiner Daten.
+      </p>
+
+      <h3>Google Firebase — Benachrichtigungen, Abstürze und Analytics</h3>
+      <ul>
+        <li><strong>Firebase Cloud Messaging:</strong> stellt Push-Benachrichtigungen auf deinem Gerät zu</li>
+        <li><strong>Firebase Crashlytics:</strong> erfasst Absturzberichte, damit Fehler diagnostiziert werden können</li>
+        <li><strong>Firebase Analytics:</strong> erfasst zusammengefasste Nutzungsstatistiken (Android)</li>
+      </ul>
+
+      <h3>Google Maps</h3>
+      <p>
+        Die Karten- und Standortauswahl-Funktionen nutzen das Google Maps SDK. Wenn
+        du eine Karte öffnest, kann dein ungefährer oder genauer Standort von
+        Google verarbeitet werden, um sie darzustellen.
+      </p>
+
+      <h3>App Stores und Zahlungen</h3>
+      <p>
+        Kostenpflichtige Winzer-Abos werden unter Android über
+        <strong>Google Play Billing</strong> und unter iOS über <strong>Apples App
+        Store</strong> abgewickelt. Zahlungsdaten verarbeitet ausschließlich der
+        jeweilige Store — wir sehen und speichern deine Kartendaten nie. Wir
+        erfahren nur, dass ein Abo aktiv ist und wann es endet.
+      </p>
+
+      <h3>Gesetzliche Pflichten</h3>
+      <p>Daten können zusätzlich offengelegt werden, wenn das Gesetz es verlangt.</p>
+
+      <div class="panel">
+        <span class="panel__label">Hinweis zur Übermittlung</span>
+        <p>
+          Diese Anbieter können Daten außerhalb der Schweiz und des EWR verarbeiten,
+          auch in den Vereinigten Staaten, auf Grundlage der Übermittlungsmechanismen
+          in ihren eigenen Auftragsverarbeitungsbedingungen.
+        </p>
+      </div>
+
+      <h3>Sicherheitsmaßnahmen</h3>
+      <ul>
+        <li>Verschlüsselte Datenübertragung (HTTPS/TLS)</li>
+        <li>Row Level Security in der Datenbank, sodass jedes Konto nur seine eigenen Datensätze erreicht</li>
+        <li>Sichere Authentifizierungsverfahren</li>
+        <li>Regelmäßige Sicherheitsupdates</li>
+      </ul>
+      <p>
+        Keine Übertragung über das Internet ist jedoch zu 100&nbsp;% sicher, und wir
+        können keine absolute Sicherheit garantieren.
+      </p>
+
+      <h2 id="rechte"><span class="legal__num">05</span>Deine Rechte und Wahlmöglichkeiten</h2>
+
+      <h3>Einsehen und ändern</h3>
+      <p>Du kannst deine Profilangaben jederzeit in der App einsehen und ändern.</p>
+
+      <h3>Standortdienste</h3>
+      <p>
+        Den Standortzugriff kannst du in den Geräteeinstellungen erlauben oder
+        entziehen. Karten- und Umgebungsfunktionen brauchen ihn, der Rest der App
+        funktioniert ohne.
+      </p>
+
+      <h3>Push-Benachrichtigungen</h3>
+      <p>Push-Benachrichtigungen kannst du abbestellen über:</p>
+      <ul>
+        <li>die Einstellungen der App</li>
+        <li>die Benachrichtigungseinstellungen deines Geräts</li>
+        <li>das Beenden des Abos eines bestimmten Weinguts oder Weins</li>
+      </ul>
+
+      <h3>Analytics und Absturzberichte</h3>
+      <p>
+        Werbe- und Analyse-Kennungen kannst du in den Geräteeinstellungen
+        einschränken (Android: <em>Datenschutz &rarr; Werbung</em>; iOS:
+        <em>Datenschutz &amp; Sicherheit &rarr; Tracking</em>).
+      </p>
+
+      <h2 id="loeschung"><span class="legal__num">06</span>Konto löschen</h2>
+      <div class="callout">
+        <p>
+          <strong>Du kannst dein Konto und alle zugehörigen Daten jederzeit direkt
+          in der App löschen, unter Android und iOS.</strong>
+          Öffne dein <strong>Profil</strong> (Winzer unter iOS: auf das Profilbild
+          tippen), wähle <strong>Konto löschen</strong> und bestätige.
+        </p>
+      </div>
+
+      <h3>Was passiert</h3>
+      <ul>
+        <li>Dein Konto wird zur Löschung vorgemerkt und du wirst sofort abgemeldet.</li>
+        <li><strong>30 Tage lang kannst du das rückgängig machen</strong>, indem du dich einfach wieder anmeldest. In dieser Zeit wurde noch nichts entfernt.</li>
+        <li>Nach 30 Tagen löscht ein geplanter Vorgang das Konto endgültig. Dieser Schritt ist unwiderruflich.</li>
+      </ul>
+
+      <h3>Was gelöscht wird</h3>
+      <ul>
+        <li>Dein Nutzerkonto und deine Anmeldedaten</li>
+        <li>Dein Profil und, als Winzer, dein Weingut samt komplettem Weinkatalog</li>
+        <li>Alle hochgeladenen Fotos — Profil-, Weingut-, Wein- und Präsentationsbilder</li>
+        <li>Von dir erstellte Bewertungen, Rezensionen, Favoriten und Geschmacks-Tags</li>
+        <li>Deine Weingut- und Wein-Abos sowie deine gespeicherten Benachrichtigungen</li>
+        <li>Deine Abo-Daten und dein Push-Token</li>
+        <li>Die &bdquo;Mit Apple anmelden&ldquo;-Freigabe, die in deinem Namen bei Apple widerrufen wird</li>
+      </ul>
+
+      <div class="panel panel--warn">
+        <span class="panel__label">Nach Ablauf der Frist unwiderruflich</span>
+        <p>
+          Sind die 30 Tage abgelaufen und ist die Löschung durchgeführt, lassen sich
+          die Daten nicht wiederherstellen. Hast du keinen Zugriff mehr auf die App,
+          bevor du dein Konto löschen kannst, schreib an
+          <a href="mailto:ausgetrunken@markono.dev">ausgetrunken@markono.dev</a>
+          — von der E-Mail-Adresse, mit der du registriert bist. Alle Einzelheiten
+          stehen auf der <a href="delete-account/#deutsch">Seite zur Kontolöschung</a>.
+        </p>
+      </div>
+
+      <h2 id="kinder"><span class="legal__num">07</span>Datenschutz bei Kindern</h2>
+      <div class="callout">
+        <span class="callout__label">Altersgrenze</span>
+        <p>
+          Die App richtet sich nicht an Personen unter 18 Jahren (bzw. unter dem in
+          deinem Land geltenden Mindestalter für Alkohol). Wir erheben wissentlich
+          keine Daten von Kindern. Wenn du glaubst, dass wir Daten eines Kindes
+          erhoben haben, melde dich bitte umgehend bei uns.
+        </p>
+      </div>
+
+      <h2 id="speicherdauer"><span class="legal__num">08</span>Speicherdauer</h2>
+      <p>Wir speichern deine Daten, solange:</p>
+      <ul>
+        <li>dein Konto besteht,</li>
+        <li>sie für die Bereitstellung des Dienstes nötig sind, oder</li>
+        <li>das Gesetz es verlangt.</li>
+      </ul>
+      <p>
+        Wenn du dein Konto löschst, wird alles, was in Abschnitt 6 aufgeführt ist,
+        nach der 30-tägigen Frist entfernt, sofern wir nicht gesetzlich zur
+        Aufbewahrung verpflichtet sind. Absturzberichte und zusammengefasste
+        Nutzungsstatistiken bewahrt der jeweilige Anbieter nach seinen eigenen
+        Fristen auf; sobald dein Konto gelöscht ist, sind sie nicht mehr mit ihm
+        verknüpft.
+      </p>
+
+      <h2 id="rechtsgrundlagen"><span class="legal__num">09</span>Rechtliche Grundlagen</h2>
+      <p>Diese Datenschutzerklärung soll folgenden Regelwerken entsprechen:</p>
+      <ul>
+        <li>dem Schweizer Bundesgesetz über den Datenschutz (DSG)</li>
+        <li>der Datenschutz-Grundverordnung (DSGVO) für Nutzer in der EU und im EWR</li>
+        <li>dem California Consumer Privacy Act (CCPA) für Nutzer in Kalifornien</li>
+        <li>den Anforderungen von Google Play und dem Apple App Store</li>
+      </ul>
+
+      <h3>Deine Rechte nach der DSGVO (EU/EWR)</h3>
+      <p>Wenn du dich im Europäischen Wirtschaftsraum befindest, hast du das Recht auf:</p>
+      <ul>
+        <li>Auskunft über deine personenbezogenen Daten</li>
+        <li>Berichtigung unrichtiger Daten</li>
+        <li>Löschung deiner Daten</li>
+        <li>Einschränkung der Verarbeitung</li>
+        <li>Datenübertragbarkeit</li>
+        <li>Widerspruch gegen die Verarbeitung</li>
+        <li>Widerruf einer Einwilligung</li>
+        <li>Beschwerde bei deiner Aufsichtsbehörde</li>
+      </ul>
+      <p>Um diese Rechte auszuüben, schreib uns an die unten genannte Adresse.</p>
+
+      <h2 id="kontakt"><span class="legal__num">10</span>Kontakt</h2>
+      <div class="panel">
+        <p>Bei Fragen zu dieser Datenschutzerklärung, zu deinen Daten oder für eine Löschanfrage:</p>
+        <p><strong>E-Mail:</strong> <a href="mailto:ausgetrunken@markono.dev">ausgetrunken@markono.dev</a></p>
+        <p>
+          <strong>Löschanfragen per E-Mail:</strong> bitte von der Adresse schreiben,
+          mit der dein Konto registriert ist, damit es ohne Rückfragen zugeordnet
+          werden kann.
+        </p>
+      </div>
+
+      <h3>Änderungen dieser Erklärung</h3>
+      <p>
+        Wir können diese Datenschutzerklärung von Zeit zu Zeit aktualisieren.
+        Änderungen werden in der App und auf dieser Seite bekannt gegeben; das Datum
+        oben gibt immer den aktuellen Stand wieder.
+      </p>
+      <p>
+        Bei Abweichungen zwischen dieser deutschen Fassung und der
+        <a href="privacy-policy.html" hreflang="en">englischen Privacy Policy</a>
+        gilt der Inhalt beider gleichermaßen; sie beschreiben dieselbe Verarbeitung.
+      </p>
+
+      <p class="legal__foot">
+        &copy; <span id="year">2026</span> Marko Nonninger. Alle Rechte vorbehalten.<br>
+        Stand: <time datetime="2026-09-09">9. September 2026</time>
+      </p>
+
+    </article>
+  </div>
+
+</main>
+
+<!-- ============================================================ FOOTER ==== -->
+<footer class="site-footer">
+  <div class="shell site-footer__inner">
+    <div class="site-footer__brand">
+      <span class="brand__text">Ausgetrunken</span>
+      <span class="site-footer__tagline">Verbindet Weinliebhaber mit lokalen Weingütern</span>
+    </div>
+
+    <nav class="site-footer__links" aria-label="Dokumente">
+      <a href="./">Übersicht</a>
+      <a href="privacy-policy.html" hreflang="en">Privacy Policy</a>
+      <a href="terms-of-service.html" hreflang="en">Terms of Service</a>
+      <a href="delete-account/#deutsch">Konto löschen</a>
+      <a href="https://markono.dev/" rel="noopener">markono.dev</a>
+    </nav>
+
+    <div class="site-footer__meta">
+      <span>&copy; 2026 Marko Nonninger. Alle Rechte vorbehalten.</span>
+      <span class="site-footer__built">Vorrangig in Deutschland verfügbar · Es gilt Schweizer Recht</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/docs.js"></script>
+</body>
+</html>

@@ -1,0 +1,910 @@
+/* =============================================================================
+   Ausgetrunken — documentation stylesheet
+
+   Third in a family. markono.dev set the structure; Tap2Card-Docs proved it
+   travels. This one keeps the same skeleton — .shell, .kicker, .btn, .doc-hero,
+   .legal, .site-footer, identical spacing and the same grid — and changes three
+   things, because a wine app should not look like a banking tool:
+
+     1. Ground.   Paper white #FDFBF7 instead of #ffffff. Warm, printed, not clinical.
+     2. Display.  Cormorant Garamond for headings — the face a wine label wears.
+                  Body text stays on the same system sans as the other two sites,
+                  so paragraphs read identically and only the voice changes.
+     3. Gold.     Present in exactly one place: the hairline under the hero, at
+                  low opacity. It was originally spread over kickers, numerals and
+                  small caps and read as loud rather than fine — an accent used
+                  eight times is not an accent. Burgundy carries everything that
+                  needs colour; gold is a single grace note.
+
+   Palette is lifted from the app's own Color.kt so site and app agree:
+       #722F37  burgundy   — primary accent
+       #D4AF37  wine gold  — secondary accent, used sparingly
+       #FDFBF7  paper      — light ground
+       #121111  reddish    — dark ground
+       #1E1A1B  backdrop   — dark surfaces
+
+   No build step, no dependencies beyond the one webfont link in each page head.
+
+   Teil einer Design-Familie: markono.dev, Tap2Card-Docs, Ausgetrunken-Docs teilen
+   Struktur, Komponentennamen, Token-Vokabular und Theme-Mechanik. Was sie teilen,
+   was bewusst auseinanderlaeuft und warum es KEINE gemeinsame CSS-Datei gibt,
+   steht in MarkoNoDev/docs/DESIGN_FAMILY.md. Aenderungen am Skelett gehoeren in
+   alle drei Dateien.
+
+   Structure
+     1. Tokens          — light + dark, one place
+     2. Reset & base
+     3. Layout helpers  — .shell, .kicker
+     4. Components      — buttons, icons, panels, badges
+     5. Header & nav
+     6. Doc hero
+     7. Landing & about
+     8. Legal documents — TOC, prose
+     9. Footer
+    10. Motion & print
+   ============================================================================= */
+
+/* ============================================================ 1. TOKENS ==== */
+
+:root {
+  /* Colour — light */
+  --bg:            #fdfbf7;
+  --bg-alt:        #f2eeea;
+  --bg-deep:       #2a1417;
+  --bg-deep-2:     #1b0d0f;
+  --hero-bg:       #f4ece9;
+
+  --ink:           #241d1f;
+  --ink-strong:    #120d0d;
+  --muted:         #5c5052;
+
+  --line:          #e0d6cd;
+  --line-strong:   #c6b6a8;
+
+  --accent:        #722f37;
+  --accent-strong: #8e3b44;
+  --accent-soft:   #f4e8e8;
+  --link:          #7b3239;
+
+  /* One hairline, nothing else. See the note at the top of this file. */
+  --gold-line:     rgba(150, 115, 31, .5);
+
+  --on-deep:       #faf5f5;
+  --on-deep-soft:  #d6c3c4;
+  --on-deep-line:  rgba(255, 255, 255, .16);
+
+  --warn:          #8a5a1a;
+  --warn-bg:       #f7eeda;
+  --warn-line:     #e0c791;
+
+  --shadow-sm:     0 1px 2px rgba(43, 26, 28, .06), 0 2px 8px rgba(43, 26, 28, .05);
+  --shadow-md:     0 2px 6px rgba(43, 26, 28, .08), 0 14px 34px rgba(43, 26, 28, .11);
+
+  /* Type */
+  --font-display: "Cormorant Garamond", "Iowan Old Style", "Palatino Linotype",
+                  Georgia, "Times New Roman", serif;
+  --font-sans: "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, "SFMono-Regular", "JetBrains Mono", "Cascadia Mono",
+               Consolas, "Liberation Mono", monospace;
+
+  /* Space & shape */
+  --shell:   1120px;
+  --gutter:  clamp(1.25rem, 5vw, 3rem);
+  --radius:  14px;
+  --radius-sm: 9px;
+
+  --header-h: 68px;
+
+  color-scheme: light;
+}
+
+/* Dark palette. The inline head script writes data-theme on <html>: "light",
+   "dark" or "auto". Two selectors need it — an explicit dark choice, and "auto"
+   while the OS is dark — so the block is repeated once inside the media query.
+   Keep the two copies in sync; they are the only duplicated rules in this file. */
+:root[data-theme="light"] { color-scheme: light; }
+
+:root[data-theme="dark"] {
+  --bg:            #121111;
+  --bg-alt:        #1e1a1b;
+  --bg-deep:       #1a0f11;
+  --bg-deep-2:     #0b0808;
+  --hero-bg:       #1a1416;
+
+  --ink:           #e0d6d7;
+  --ink-strong:    #f5eeef;
+  --muted:         #9a8a8c;
+
+  --line:          #332a2b;
+  --line-strong:   #4b3d3e;
+
+  --accent:        #d08c93;
+  --accent-strong: #e5a3aa;
+  --accent-soft:   #2a1618;
+  --link:          #e0a6ac;
+
+  --gold-line:     rgba(212, 175, 55, .42);
+
+  --on-deep:       #f7f0f1;
+  --on-deep-soft:  #c9b4b6;
+  --on-deep-line:  rgba(255, 255, 255, .14);
+
+  --warn:          #d9b262;
+  --warn-bg:       #2c220f;
+  --warn-line:     #4d3d19;
+
+  --shadow-sm:     0 1px 2px rgba(0, 0, 0, .34), 0 2px 8px rgba(0, 0, 0, .26);
+  --shadow-md:     0 2px 6px rgba(0, 0, 0, .4), 0 14px 34px rgba(0, 0, 0, .34);
+
+  color-scheme: dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root[data-theme="auto"] {
+    --bg:            #121111;
+    --bg-alt:        #1e1a1b;
+    --bg-deep:       #1a0f11;
+    --bg-deep-2:     #0b0808;
+    --hero-bg:       #1a1416;
+
+    --ink:           #e0d6d7;
+    --ink-strong:    #f5eeef;
+    --muted:         #9a8a8c;
+
+    --line:          #332a2b;
+    --line-strong:   #4b3d3e;
+
+    --accent:        #d08c93;
+    --accent-strong: #e5a3aa;
+    --accent-soft:   #2a1618;
+    --link:          #e0a6ac;
+
+    --gold-line:     rgba(212, 175, 55, .42);
+
+    --on-deep:       #f7f0f1;
+    --on-deep-soft:  #c9b4b6;
+    --on-deep-line:  rgba(255, 255, 255, .14);
+
+    --warn:          #d9b262;
+    --warn-bg:       #2c220f;
+    --warn-line:     #4d3d19;
+
+    --shadow-sm:     0 1px 2px rgba(0, 0, 0, .34), 0 2px 8px rgba(0, 0, 0, .26);
+    --shadow-md:     0 2px 6px rgba(0, 0, 0, .4), 0 14px 34px rgba(0, 0, 0, .34);
+
+    color-scheme: dark;
+  }
+}
+
+
+/* ==================================================== 2. RESET & BASE ==== */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header-h) + 20px);
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: 1.0625rem;
+  line-height: 1.68;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Cormorant runs small and light for its point size — hence the larger sizes
+   and the 600 weight everywhere below. */
+h1, h2, h3 {
+  margin: 0;
+  color: var(--ink-strong);
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.12;
+  letter-spacing: -0.005em;
+}
+h4 { margin: 0; color: var(--ink-strong); font-weight: 700; }
+
+p { margin: 0 0 1.05em; }
+p:last-child { margin-bottom: 0; }
+
+ul, ol { margin: 0; padding: 0; list-style: none; }
+
+a { color: var(--link); text-decoration: none; }
+a:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+strong { font-weight: 700; color: var(--ink-strong); }
+
+img { max-width: 100%; height: auto; display: block; }
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 200;
+  background: var(--accent);
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 0 0 var(--radius-sm) 0;
+  font-weight: 600;
+}
+.skip-link:focus { left: 0; text-decoration: none; }
+
+
+/* =================================================== 3. LAYOUT HELPERS ==== */
+
+.shell {
+  width: 100%;
+  max-width: var(--shell);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.section { padding-block: clamp(3rem, 7vw, 5rem); }
+.section--alt { background: var(--bg-alt); border-block: 1px solid var(--line); }
+
+/* Same structural element as the sibling sites, re-voiced: sans small caps in
+   gold with a gold rule, rather than mono in the accent colour. */
+.kicker {
+  font-family: var(--font-sans);
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 .95rem;
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+}
+.kicker::before {
+  content: "";
+  width: 30px;
+  height: 1px;
+  background: currentColor;
+  flex: 0 0 auto;
+}
+.kicker--onDark { color: var(--on-deep-soft); }
+
+.section__title { font-size: clamp(1.7rem, 3.8vw, 2.35rem); }
+.section__intro { color: var(--muted); max-width: 40rem; margin-top: .7rem; }
+
+
+/* ======================================================= 4. COMPONENTS ==== */
+
+.icon {
+  width: 1.15em;
+  height: 1.15em;
+  flex: 0 0 auto;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.btn {
+  --btn-bg: transparent;
+  --btn-fg: var(--ink-strong);
+  --btn-bd: var(--line-strong);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .55em;
+  padding: .78em 1.6em;
+  border: 1px solid var(--btn-bd);
+  border-radius: 999px;
+  background: var(--btn-bg);
+  color: var(--btn-fg);
+  font: inherit;
+  font-family: var(--font-sans);
+  font-size: .95rem;
+  font-weight: 600;
+  line-height: 1.2;
+  cursor: pointer;
+  transition: transform .18s ease, box-shadow .18s ease,
+              background-color .18s ease, border-color .18s ease, color .18s ease;
+}
+.btn:hover {
+  text-decoration: none;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+.btn:active { transform: translateY(0); }
+
+.btn--primary {
+  --btn-bg: var(--accent);
+  --btn-fg: #fdfbf7;
+  --btn-bd: var(--accent);
+}
+.btn--primary:hover { --btn-bg: var(--accent-strong); --btn-bd: var(--accent-strong); }
+:root[data-theme="dark"] .btn--primary { --btn-fg: #1a0f11; }
+@media (prefers-color-scheme: dark) {
+  :root[data-theme="auto"] .btn--primary { --btn-fg: #1a0f11; }
+}
+
+.btn--outline { --btn-bg: var(--bg); }
+.btn--outline:hover { --btn-bd: var(--accent); --btn-fg: var(--accent); }
+
+.btn--ghost {
+  --btn-bg: transparent;
+  --btn-fg: var(--on-deep);
+  --btn-bd: var(--on-deep-line);
+}
+.btn--ghost:hover { --btn-bd: var(--on-deep); --btn-fg: var(--on-deep); }
+
+.btn-row { display: flex; flex-wrap: wrap; gap: .7rem; margin-top: 1.6rem; }
+
+/* Panels ----------------------------------------------------------------- */
+
+.callout {
+  background: var(--accent-soft);
+  border-left: 2px solid var(--accent);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  padding: 1.2rem 1.5rem;
+  margin-block: 1.7rem;
+}
+.callout__label {
+  display: block;
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: .45rem;
+}
+
+.panel {
+  background: var(--bg-alt);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: 1.2rem 1.5rem;
+  margin-block: 1.5rem;
+}
+.panel--warn { background: var(--warn-bg); border-color: var(--warn-line); }
+.panel--warn .panel__label { color: var(--warn); }
+.panel__label {
+  display: block;
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: .5rem;
+}
+
+/* Technology badges on the about page. */
+.badges { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1.2rem; }
+.badge {
+  font-family: var(--font-mono);
+  font-size: .78rem;
+  color: var(--muted);
+  background: var(--bg-alt);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: .34em .95em;
+}
+
+
+/* ==================================================== 5. HEADER & NAV ==== */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: color-mix(in srgb, var(--bg) 90%, transparent);
+  backdrop-filter: saturate(150%) blur(12px);
+  -webkit-backdrop-filter: saturate(150%) blur(12px);
+  border-bottom: 1px solid var(--line);
+}
+
+.site-header__inner {
+  min-height: var(--header-h);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-block: .5rem;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: .65rem;
+  color: var(--ink-strong);
+  margin-right: auto;
+}
+.brand:hover { text-decoration: none; }
+.brand__logo {
+  width: 32px; height: 32px;
+  flex: 0 0 auto;
+  border-radius: 8px;
+  box-shadow: var(--shadow-sm);
+}
+.brand__text {
+  font-family: var(--font-display);
+  font-size: 1.32rem;
+  font-weight: 600;
+  letter-spacing: .005em;
+  line-height: 1.1;
+  display: block;
+}
+.brand__sub {
+  display: block;
+  font-size: .64rem;
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  line-height: 1.4;
+}
+
+.site-nav { display: flex; align-items: center; gap: .2rem; }
+.site-nav__link {
+  padding: .5rem .8rem;
+  border-radius: 8px;
+  color: var(--muted);
+  font-size: .93rem;
+  font-weight: 600;
+  transition: color .18s ease, background-color .18s ease;
+}
+.site-nav__link:hover { color: var(--ink-strong); background: var(--bg-alt); text-decoration: none; }
+.site-nav__link[aria-current="page"] { color: var(--accent); }
+
+.header-tools { display: flex; align-items: center; gap: .5rem; }
+
+/* Language pair, same component as Tap2Card-Docs. Links, not buttons — each
+   language is its own document, which is what a legal page wants. */
+.lang-switch {
+  display: inline-flex;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 2px;
+  background: var(--bg-alt);
+}
+.lang-switch__btn {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  font: inherit;
+  font-family: var(--font-mono);
+  font-size: .74rem;
+  font-weight: 700;
+  letter-spacing: .06em;
+  padding: .38em .72em;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background-color .18s ease, color .18s ease;
+}
+.lang-switch__btn:hover { color: var(--ink-strong); text-decoration: none; }
+.lang-switch__btn[aria-current="true"] {
+  background: var(--accent);
+  color: #fff;
+}
+.lang-switch__btn[aria-current="true"]:hover { color: #fff; }
+/* Dark accent is a light rose, so the active label switches to ReddishGray (Color.kt). */
+:root[data-theme="dark"] .lang-switch__btn[aria-current="true"],
+:root[data-theme="dark"] .lang-switch__btn[aria-current="true"]:hover { color: #121111; }
+@media (prefers-color-scheme: dark) {
+  :root[data-theme="auto"] .lang-switch__btn[aria-current="true"],
+  :root[data-theme="auto"] .lang-switch__btn[aria-current="true"]:hover { color: #121111; }
+}
+
+.icon-btn {
+  appearance: none;
+  display: inline-grid;
+  place-items: center;
+  width: 38px; height: 38px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--bg-alt);
+  color: var(--muted);
+  cursor: pointer;
+  transition: color .18s ease, border-color .18s ease;
+}
+.icon-btn:hover { color: var(--ink-strong); border-color: var(--line-strong); }
+.icon-btn .icon { width: 18px; height: 18px; }
+
+.icon--moon { display: none; }
+:root[data-theme="dark"] .icon--sun  { display: none; }
+:root[data-theme="dark"] .icon--moon { display: block; }
+@media (prefers-color-scheme: dark) {
+  :root[data-theme="auto"] .icon--sun  { display: none; }
+  :root[data-theme="auto"] .icon--moon { display: block; }
+}
+
+@media (max-width: 700px) {
+  .site-nav { display: none; }
+}
+@media (max-width: 520px) {
+  .brand__sub { display: none; }
+}
+
+
+/* ======================================================== 6. DOC HERO ==== */
+
+/* The hero is a quiet tinted band, not a block of brand colour. It used to be a
+   full-strength field of the accent across the whole width, which shouted louder
+   than the text it framed. Instead of restyling every child, the block redefines
+   the three --on-deep tokens to the ordinary text tokens: every rule underneath
+   keeps working, and it resolves correctly in both themes at once. */
+.doc-hero {
+  --on-deep:      var(--ink-strong);
+  --on-deep-soft: var(--muted);
+  --on-deep-line: var(--line-strong);
+
+  background: var(--hero-bg);
+  color: var(--ink);
+  padding-block: clamp(2.5rem, 6vw, 3.75rem);
+  border-bottom: 1px solid var(--gold-line);
+  position: relative;
+}
+.doc-hero .kicker--onDark { color: var(--accent); }
+
+/* On a document page the prose starts after the contents rail, so the heading
+   has to start there too — otherwise the title floats a column to the left of
+   everything it introduces. Same grid, same gap, content in the second track. */
+.doc-hero--doc .doc-hero__inner {
+  max-width: none;
+  display: grid;
+  grid-template-columns: 15rem minmax(0, 1fr);
+  gap: clamp(2rem, 5vw, 3.5rem);
+}
+.doc-hero--doc .doc-hero__inner > * { grid-column: 2; max-width: 44rem; }
+@media (max-width: 900px) {
+  .doc-hero--doc .doc-hero__inner { display: block; }
+}
+/* The only gold in the stylesheet is the hero's bottom border, set above.
+   Everything that used to be gold — kickers, numerals, rules — is now burgundy
+   or muted. */
+.doc-hero__inner { max-width: 52rem; }
+.doc-hero h1 {
+  color: var(--on-deep);
+  font-size: clamp(2.2rem, 5.6vw, 3.4rem);
+  line-height: 1.06;
+  margin-bottom: .9rem;
+}
+.doc-hero__lead {
+  color: var(--on-deep-soft);
+  font-size: 1.11rem;
+  line-height: 1.62;
+  max-width: 44rem;
+}
+
+.doc-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .6rem 2rem;
+  margin-top: 1.9rem;
+  padding-top: 1.4rem;
+  border-top: 1px solid var(--on-deep-line);
+  font-size: .84rem;
+  color: var(--on-deep-soft);
+}
+.doc-meta__item { display: flex; align-items: baseline; gap: .55rem; }
+.doc-meta__key {
+  font-size: .66rem;
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--on-deep-soft);
+  opacity: .72;
+}
+.doc-meta__val { color: var(--on-deep); font-weight: 600; }
+.doc-meta__val a { color: var(--on-deep); text-decoration: underline; text-underline-offset: 3px; }
+
+.backlink {
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
+  color: var(--on-deep-soft);
+  font-size: .9rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+.backlink:hover { color: var(--on-deep); text-decoration: none; }
+.backlink .icon { width: 1em; height: 1em; transition: transform .18s ease; }
+.backlink:hover .icon { transform: translateX(-3px); }
+
+
+/* ================================================= 7. LANDING & ABOUT ==== */
+
+.doc-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: 1.2rem;
+  margin-top: 2.2rem;
+}
+
+.doc-card {
+  display: flex;
+  flex-direction: column;
+  gap: .6rem;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.7rem 1.6rem 1.75rem;
+  color: var(--ink);
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+.doc-card:hover {
+  text-decoration: none;
+  transform: translateY(-3px);
+  border-color: var(--accent);
+  box-shadow: var(--shadow-md);
+}
+.doc-card__icon {
+  color: var(--accent);
+  width: 26px; height: 26px;
+  margin-bottom: .35rem;
+}
+.doc-card__title { font-size: 1.42rem; }
+.doc-card__text { color: var(--muted); font-size: .95rem; margin: 0; }
+.doc-card__go {
+  margin-top: auto;
+  padding-top: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  color: var(--accent);
+  font-weight: 600;
+  font-size: .91rem;
+}
+.doc-card__go .icon { width: 1em; height: 1em; transition: transform .18s ease; }
+.doc-card:hover .doc-card__go .icon { transform: translateX(3px); }
+
+/* Feature columns on the about page. */
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+  gap: 1.2rem;
+  margin-top: 1.8rem;
+}
+.feature-card {
+  background: var(--bg-alt);
+  border: 1px solid var(--line);
+  border-top: 2px solid var(--accent);
+  border-radius: var(--radius-sm);
+  padding: 1.5rem 1.6rem 1.6rem;
+}
+.feature-card h3 { font-size: 1.3rem; margin-bottom: .9rem; }
+.feature-card ul { display: flex; flex-direction: column; gap: .7rem; }
+.feature-card li { font-size: .95rem; line-height: 1.55; }
+.feature-card li strong { display: block; color: var(--ink-strong); }
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: 1.2rem;
+  margin-top: 2rem;
+}
+.info-tile {
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.45rem 1.6rem;
+}
+.info-tile h3 { font-size: 1.22rem; margin-bottom: .45rem; }
+.info-tile p { color: var(--muted); font-size: .95rem; margin: 0; }
+.info-tile a { font-weight: 600; }
+
+/* Closing call to action — deep ground, gold rule, centred. */
+.cta {
+  --on-deep:      var(--ink-strong);
+  --on-deep-soft: var(--muted);
+  --on-deep-line: var(--line-strong);
+
+  background: var(--hero-bg);
+  color: var(--ink);
+  border-radius: var(--radius);
+  border: 1px solid var(--line-strong);
+  border-left: 2px solid var(--accent);
+  padding: clamp(1.9rem, 4.5vw, 2.6rem);
+  margin-top: 2.5rem;
+  max-width: 44rem;
+}
+.cta .kicker--onDark { color: var(--accent); justify-content: flex-start; }
+.cta h2 { color: var(--ink-strong); font-size: clamp(1.5rem, 3.2vw, 2rem); }
+.cta p { color: var(--muted); max-width: 34rem; margin-top: .8rem; }
+.cta__note { font-size: .84rem; color: var(--muted); opacity: .8; margin-top: 1.1rem; }
+
+
+/* ================================================ 8. LEGAL DOCUMENTS ==== */
+
+.doc-layout {
+  display: grid;
+  grid-template-columns: 15rem minmax(0, 1fr);
+  gap: clamp(2rem, 5vw, 3.5rem);
+  align-items: start;
+  padding-block: clamp(2.5rem, 6vw, 4rem);
+}
+@media (max-width: 900px) {
+  .doc-layout { grid-template-columns: minmax(0, 1fr); gap: 2rem; }
+}
+
+.toc {
+  position: sticky;
+  top: calc(var(--header-h) + 20px);
+  border-left: 1px solid var(--line-strong);
+  padding-left: 1.2rem;
+}
+@media (max-width: 900px) {
+  .toc {
+    position: static;
+    border-left: 0;
+    padding: 1.3rem 1.5rem;
+    background: var(--bg-alt);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-sm);
+  }
+}
+.toc__title {
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: .9rem;
+}
+.toc__list { display: flex; flex-direction: column; gap: .12rem; }
+.toc__link {
+  display: block;
+  padding: .32rem 0;
+  color: var(--muted);
+  font-size: .92rem;
+  line-height: 1.42;
+  transition: color .16s ease;
+}
+.toc__link:hover { color: var(--accent); text-decoration: none; }
+.toc__num {
+  font-family: var(--font-mono);
+  font-size: .74rem;
+  color: var(--muted);
+  margin-right: .5rem;
+}
+
+.legal { max-width: 44rem; }
+
+.legal h2 {
+  font-size: clamp(1.5rem, 3vw, 1.95rem);
+  margin-top: 3rem;
+  margin-bottom: .9rem;
+  padding-bottom: .6rem;
+  border-bottom: 1px solid var(--line);
+  scroll-margin-top: calc(var(--header-h) + 20px);
+}
+.legal > h2:first-child, .legal > *:first-child + h2 { margin-top: 0; }
+
+.legal__num {
+  font-family: var(--font-mono);
+  font-size: .58em;
+  font-weight: 400;
+  color: var(--muted);
+  margin-right: .7rem;
+  vertical-align: .18em;
+}
+
+.legal h3 {
+  font-size: 1.22rem;
+  margin-top: 1.8rem;
+  margin-bottom: .5rem;
+}
+
+.legal p { margin-bottom: 1em; }
+
+.legal ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  margin-bottom: 1.2em;
+}
+.legal ul li { position: relative; padding-left: 1.35rem; }
+.legal ul li::before {
+  content: "";
+  position: absolute;
+  left: .28rem;
+  top: .72em;
+  width: 4px; height: 4px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+.legal .callout ul, .legal .panel ul { margin-bottom: 0; }
+.legal .callout p:last-child, .legal .panel p:last-child { margin-bottom: 0; }
+
+/* Blocks of legal boilerplate that are set in caps in the source stay legible
+   by dropping to a smaller size rather than shouting at full body size. */
+.legal .allcaps { font-size: .93rem; letter-spacing: .01em; }
+
+/* The bilingual deletion page stacks two language blocks; this rules them off. */
+.lang-block + .lang-block {
+  margin-top: 3.5rem;
+  padding-top: 3rem;
+  border-top: 1px solid var(--line-strong);
+}
+.lang-block__tag {
+  display: inline-flex;
+  align-items: center;
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: var(--accent-soft);
+  border-radius: 999px;
+  padding: .35em .9em;
+  margin-bottom: 1.1rem;
+}
+
+.legal__foot {
+  margin-top: 3.2rem;
+  padding-top: 1.4rem;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: .88rem;
+}
+
+
+/* =========================================================== 9. FOOTER ==== */
+
+.site-footer {
+  background: var(--bg-deep-2);
+  color: var(--on-deep-soft);
+  border-top: 1px solid var(--on-deep-line);
+  padding-block: 2.5rem;
+  font-size: .88rem;
+}
+.site-footer__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.5rem 2rem;
+}
+.site-footer__brand { display: flex; flex-direction: column; gap: .2rem; }
+.site-footer__brand .brand__text { color: var(--on-deep); font-size: 1.28rem; }
+.site-footer__tagline { color: var(--on-deep-soft); font-size: .83rem; }
+.site-footer__links { display: flex; flex-wrap: wrap; gap: .3rem 1.4rem; }
+.site-footer__links a { color: var(--on-deep-soft); font-weight: 600; }
+.site-footer__links a:hover { color: var(--on-deep); }
+.site-footer__meta { display: flex; flex-direction: column; gap: .2rem; }
+.site-footer__built { opacity: .68; font-size: .81rem; }
+
+
+/* ================================================= 10. MOTION & PRINT ==== */
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: .001ms !important;
+    transition-duration: .001ms !important;
+  }
+}
+
+@media print {
+  .site-header, .toc, .site-footer, .backlink, .btn-row, .cta { display: none !important; }
+  body { background: #fff; color: #000; font-size: 11pt; }
+  .doc-hero { background: #fff; color: #000; border-bottom: 1px solid #999; padding-block: 0 1rem; }
+  .doc-hero::after { display: none; }
+  .doc-hero h1, .doc-meta__val { color: #000; }
+  .doc-meta { color: #444; border-top-color: #ccc; }
+  .doc-meta__key { color: #666; }
+  .doc-layout { display: block; padding-block: 1rem; }
+  .legal { max-width: none; }
+  .legal h2 { page-break-after: avoid; border-bottom-color: #999; }
+  .legal__num { color: #666; }
+  .panel, .callout, .feature-card { page-break-inside: avoid; border: 1px solid #bbb; background: #fff; }
+  a { color: #000; text-decoration: underline; }
+}
