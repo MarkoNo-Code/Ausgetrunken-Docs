@@ -1,6 +1,6 @@
 # Ausgetrunken-Docs — offene Punkte
 
-Stand: 11.09.2026, nach der Konsolidierung. Dieses Repo ist jetzt die **einzige**
+Stand: 17.09.2026. Konsolidiert am 11.09.2026. Dieses Repo ist jetzt die **einzige**
 Quelle der Ausgetrunken-Rechtsseiten (siehe README → Hosting). Die Kopie in
 `Ausgetrunken/shared-docs/web/` ist gelöscht.
 
@@ -22,18 +22,11 @@ URLs eintragen, dann hängt der Store-Eintrag nicht mehr am Worker:
         `https://markono-code.github.io/Ausgetrunken-Docs/delete-account/`
       - App Store Connect → App-Datenschutz → Datenschutzrichtlinie: wie Play.
 
-## 2. Beim nächsten App-Release
+## 2. Worker abschalten
 
-- [ ] In-App-Links direkt auf GitHub Pages stellen (Android `SettingsScreen.kt`,
-      iOS `LegalLinks.swift`, `SettingsView.swift` — dort steht noch die
-      Worker-URL).
-- [ ] Support-Kontakt: `support@ausgetrunken.app` (Android `SettingsScreen.kt`,
-      `CustomerProfileScreen.kt`, iOS `SettingsView.swift`) zeigt auf eine
-      Domain, die niemandem gehört. Entweder Domain registrieren und
-      weiterleiten (dann kann der Link bleiben) oder auf
-      `ausgetrunken@markono.dev` umstellen. Ebenso `ausgetrunken@gmail.com` im
-      Dialog für gesperrte Konten (Android `AuthScreen.kt`) — dieses Gmail-Konto
-      existiert nicht (bestätigt 11.09.2026), Mails aus dem Dialog gehen ins Leere.
+- [ ] Den Worker `ausgetrunken-legal` erst abschalten, wenn keine App-Version mit
+      den alten Links mehr im Umlauf ist: Android bis 0.4.6 und iOS bis zum
+      ersten Build nach dem 17.09.2026.
 
 ## 3. Inhaltlich
 
@@ -45,6 +38,15 @@ URLs eintragen, dann hängt der Store-Eintrag nicht mehr am Worker:
       Prüfen, ob die Abo-Bedingungen (Laufzeit, Kündigung, Erstattung) reichen.
 - [ ] Terms und About sind nur Englisch. Die alte Worker-Fassung hatte das auch
       nur auf Englisch — kein Rückschritt, aber für den deutschen Markt offen.
+
+## Erledigt am 17.09.2026
+
+- In-App-Links zeigen direkt auf GitHub Pages statt auf den Worker: Android ab
+  0.4.7 (`config/LegalLinks.kt`), iOS in `LegalLinks.swift` / `SettingsView.swift`
+  (kommt mit dem nächsten iOS-Build).
+- Support-Kontakt in beiden Apps und im Dialog für gesperrte Konten ist jetzt
+  `ausgetrunken@markono.dev`; `support@ausgetrunken.app` und
+  `ausgetrunken@gmail.com` sind raus.
 
 ## Erledigt am 11.09.2026
 
