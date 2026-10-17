@@ -104,7 +104,7 @@
       <div class="doc-meta">
         <span class="doc-meta__item">
           <span class="doc-meta__key">Stand</span>
-          <span class="doc-meta__val"><time datetime="2026-09-09">9. September 2026</time></span>
+          <span class="doc-meta__val"><time datetime="2026-10-17">17. Oktober 2026</time></span>
         </span>
         <span class="doc-meta__item">
           <span class="doc-meta__key">Gilt für</span>
@@ -146,9 +146,9 @@
       <div class="callout">
         <span class="callout__label">Kurz gesagt</span>
         <p>
-          Ausgetrunken speichert das Konto, das du anlegst, die Weingut- und
-          Weindaten, die du einträgst, und die Weingüter, die du abonnierst. Deine
-          Daten werden nicht verkauft. Du kannst dein Konto samt allem, was daran
+          Ausgetrunken speichert das Konto, das du anlegst, die Weingut-, Wein- und
+          Eventdaten, die du einträgst, die Weingüter, denen du folgst, und die
+          Events, zu denen du dich anmeldest. Deine Daten werden nicht verkauft. Du kannst dein Konto samt allem, was daran
           hängt, direkt in der App löschen — auf beiden Plattformen — und es dir
           30 Tage lang anders überlegen.
         </p>
@@ -204,12 +204,16 @@
         <li>Fotos des Weinguts</li>
         <li>Angaben zum Weinkatalog (Namen, Beschreibungen, Preise, Jahrgänge)</li>
         <li>Bestandsdaten</li>
+        <li>Events, die du veranstaltest: Titel, Beschreibung, Datum, Ort, Plätze und Fotos</li>
+        <li>Deine Gästelisten und Check-ins zu diesen Events</li>
         <li>Abo-Status, wenn du ein kostenpflichtiges Abo abschließt</li>
+        <li>Veröffentlichen von Events: die Transaktionskennung des Stores für jede bezahlte Veröffentlichung sowie die Event-Gutscheine auf deinem Konto</li>
       </ul>
 
       <h3>Für Kunden</h3>
       <ul>
         <li>Abos von Weinen und Weingütern, Favoriten, Bewertungen und Rezensionen, die du erstellst</li>
+        <li>Event-Anmeldungen: zu welchen Events du dich angemeldet hast, mit wie vielen Personen, dein Platz auf einer Warteliste und ob du eingecheckt wurdest</li>
         <li>Standortdaten, nur während du Karten- oder Umgebungsfunktionen nutzt und nur mit deiner Erlaubnis</li>
         <li>Benachrichtigungseinstellungen</li>
       </ul>
@@ -229,7 +233,8 @@
         <li>Nutzerkonten anlegen und verwalten</li>
         <li>Winzern ermöglichen, Profil, Katalog und Bestand zu pflegen</li>
         <li>Kunden ermöglichen, Weingüter zu entdecken und zu abonnieren</li>
-        <li>Benachrichtigungen zu Verfügbarkeit und Bestand von Weinen senden</li>
+        <li>Events durchführen: Anmeldung, Warteliste, Check-in per QR-Code und Gästelisten</li>
+        <li>Benachrichtigungen senden: zu Weinen, die du gespeichert hast, zu neuen Events der Weingüter, denen du folgst, sowie Änderungen, Absagen und Erinnerungen zu Events, für die du angemeldet bist</li>
         <li>Kostenpflichtige Abos von Winzern prüfen und aufrechterhalten</li>
       </ul>
 
@@ -259,6 +264,11 @@
         Dienstleister weitergegeben, jeweils für einen einzigen, benannten Zweck,
         sowie an die Nutzer, mit denen du sie bewusst teilst — ein veröffentlichtes
         Weingutprofil ist für Kunden sichtbar, das ist sein Zweck.
+      </p>
+      <p>
+        Meldest du dich zu einem Event an, sieht der Veranstalter <strong>deinen
+        Namen und die Anzahl der Personen</strong>, damit er planen und dich
+        einchecken kann. Deine E-Mail-Adresse sieht er nie.
       </p>
 
       <h3>Supabase — Konten, Datenbank und Fotos</h3>
@@ -290,6 +300,26 @@
         Store</strong> abgewickelt. Zahlungsdaten verarbeitet ausschließlich der
         jeweilige Store — wir sehen und speichern deine Kartendaten nie. Wir
         erfahren nur, dass ein Abo aktiv ist und wann es endet.
+      </p>
+      <p>
+        Das Veröffentlichen eines Events ist ein einmaliger Kauf über dieselben
+        Stores. Wir speichern die Transaktionskennung des Stores, damit ein Kauf
+        nicht zweimal verwendet werden kann.
+      </p>
+
+      <h3>Kamera und Google ML Kit — Check-in bei Events</h3>
+      <p>
+        Veranstalter scannen mit der Kamera die QR-Codes ihrer Gäste am Eingang.
+        Das Bild wird auf dem Gerät von Google ML Kit ausgelesen und weder
+        hochgeladen noch gespeichert. ML Kit läuft unter Android über die Google
+        Play-Dienste, die dabei Diagnose- und Nutzungsdaten zum Scanner selbst an
+        Google senden können.
+      </p>
+
+      <h3>Kalender</h3>
+      <p>
+        &bdquo;In Kalender übernehmen&ldquo; übergibt eine Kalenderdatei an die
+        Kalender-App deiner Wahl. Die App liest deinen Kalender nicht.
       </p>
 
       <h3>Gesetzliche Pflichten</h3>
@@ -366,9 +396,18 @@
         <li>Dein Profil und, als Winzer, dein Weingut samt komplettem Weinkatalog</li>
         <li>Alle hochgeladenen Fotos — Profil-, Weingut-, Wein- und Präsentationsbilder</li>
         <li>Von dir erstellte Bewertungen, Rezensionen, Favoriten und Geschmacks-Tags</li>
+        <li>Deine Event-Anmeldungen und Event-Gutscheine</li>
+        <li>Event-Entwürfe, die du angelegt hast</li>
         <li>Deine Weingut- und Wein-Abos sowie deine gespeicherten Benachrichtigungen</li>
         <li>Deine Abo-Daten und dein Push-Token</li>
         <li>Die &bdquo;Mit Apple anmelden&ldquo;-Freigabe, die in deinem Namen bei Apple widerrufen wird</li>
+      </ul>
+
+      <h3>Was bestehen bleibt</h3>
+      <ul>
+        <li>Bevorstehende Events, die du veröffentlicht hast, werden abgesagt, damit angemeldete Gäste davon erfahren.</li>
+        <li>Bereits stattgefundene Events bleiben im Verlauf der Gäste, die dabei waren, unter dem Namen deines Weinguts erhalten, mit ihren Angaben und Fotos.</li>
+        <li>Belege über bezahlte Event-Veröffentlichungen werden ohne Verbindung zu deinem Konto aufbewahrt, damit ein Kauf nicht erneut verwendet werden kann.</li>
       </ul>
 
       <div class="panel panel--warn">
@@ -458,7 +497,7 @@
 
       <p class="legal__foot">
         &copy; <span id="year">2026</span> Marko Nonninger. Alle Rechte vorbehalten.<br>
-        Stand: <time datetime="2026-09-09">9. September 2026</time>
+        Stand: <time datetime="2026-10-17">17. Oktober 2026</time>
       </p>
 
     </article>

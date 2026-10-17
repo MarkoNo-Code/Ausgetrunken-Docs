@@ -104,7 +104,7 @@
       <div class="doc-meta">
         <span class="doc-meta__item">
           <span class="doc-meta__key">Last updated</span>
-          <span class="doc-meta__val"><time datetime="2026-09-09">9 September 2026</time></span>
+          <span class="doc-meta__val"><time datetime="2026-10-17">17 October 2026</time></span>
         </span>
         <span class="doc-meta__item">
           <span class="doc-meta__key">Applies to</span>
@@ -146,9 +146,9 @@
       <div class="callout">
         <span class="callout__label">In short</span>
         <p>
-          Ausgetrunken stores the account you create, the winery and wine
-          information you enter, and the wineries you subscribe to. It does not
-          sell your data. You can delete your account and everything attached to
+          Ausgetrunken stores the account you create, the winery, wine and event
+          information you enter, the wineries you follow and the events you
+          register for. It does not sell your data. You can delete your account and everything attached to
           it from inside the app, on either platform, and change your mind for
           30 days.
         </p>
@@ -202,12 +202,16 @@
         <li>Winery photos</li>
         <li>Wine catalog information (names, descriptions, prices, vintage information)</li>
         <li>Inventory data</li>
+        <li>Events you host: title, description, date, place, capacity and photos</li>
+        <li>Your guest lists and check-ins for those events</li>
         <li>Subscription status, if you purchase a paid plan</li>
+        <li>Event publishing: the store's transaction identifier for each paid publication, and the event vouchers on your account</li>
       </ul>
 
       <h3>For customers</h3>
       <ul>
         <li>Wine and winery subscriptions, favourites, ratings and reviews you create</li>
+        <li>Event registrations: which events you registered for, your party size, your place on a waitlist and whether you were checked in</li>
         <li>Location data, only while you use map or nearby features and only with your permission</li>
         <li>Notification preferences</li>
       </ul>
@@ -227,7 +231,8 @@
         <li>Create and manage user accounts</li>
         <li>Enable winery owners to manage their profiles, catalogs and inventory</li>
         <li>Allow customers to discover wineries and subscribe to them</li>
-        <li>Send notifications about wine availability and inventory</li>
+        <li>Run events: registration, waitlist, QR check-in and guest lists</li>
+        <li>Send notifications about the wines you saved, new events from the wineries you follow, and changes, cancellations and reminders for events you registered for</li>
         <li>Verify and maintain paid subscriptions for winery owners</li>
       </ul>
 
@@ -257,6 +262,11 @@
         below, each for a single, named purpose, and with the other users you
         deliberately share it with — a winery profile you publish is visible to
         customers by design.
+      </p>
+      <p>
+        When you register for an event, its host sees <strong>your name and
+        party size</strong>, so they can plan and check you in. Hosts never see
+        your email address.
       </p>
 
       <h3>Supabase — accounts, database and photos</h3>
@@ -288,6 +298,25 @@
         details are handled entirely by the respective store — we never see or
         store your card data. We receive only the fact that a subscription is
         active and when it expires.
+      </p>
+      <p>
+        Publishing an event is a one-time purchase through the same stores. We
+        store the store's transaction identifier so a purchase cannot be used
+        twice.
+      </p>
+
+      <h3>Camera and Google ML Kit — event check-in</h3>
+      <p>
+        Hosts use the camera to scan their guests' QR codes at the door. The
+        image is read on the device by Google ML Kit and is neither uploaded nor
+        stored. ML Kit runs through Google Play services on Android, which may
+        send Google diagnostic and usage information about the scanner itself.
+      </p>
+
+      <h3>Calendar</h3>
+      <p>
+        &ldquo;Add to calendar&rdquo; hands a calendar file to the calendar app
+        you choose. The App does not read your calendar.
       </p>
 
       <h3>Legal requirements</h3>
@@ -363,9 +392,18 @@
         <li>Your profile and, for winery owners, your winery and its entire wine catalog</li>
         <li>All uploaded photos — profile, winery, wine and presentation images</li>
         <li>Ratings, reviews, favourites and flavour tags you created</li>
+        <li>Your event registrations and event vouchers</li>
+        <li>Event drafts you created</li>
         <li>Your winery and wine subscriptions, and your stored notifications</li>
         <li>Your subscription records and your push notification token</li>
         <li>The Sign in with Apple grant, which is revoked with Apple on your behalf</li>
+      </ul>
+
+      <h3>What remains</h3>
+      <ul>
+        <li>Upcoming events you published are cancelled, so registered guests learn they are off.</li>
+        <li>Events that already took place stay in the history of the guests who attended, under your winery's name, with their details and photos.</li>
+        <li>Records of paid event publications are kept without any link to your account, so a purchase cannot be reused.</li>
       </ul>
 
       <div class="panel panel--warn">
@@ -449,7 +487,7 @@
 
       <p class="legal__foot">
         &copy; <span id="year">2026</span> Marko Nonninger. All rights reserved.<br>
-        Last updated: <time datetime="2026-09-09">9 September 2026</time>
+        Last updated: <time datetime="2026-10-17">17 October 2026</time>
       </p>
 
     </article>
